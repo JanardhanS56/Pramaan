@@ -3,13 +3,13 @@
 <!-- AGENT: Read only CURRENT STATE + last 3 HISTORY entries on chat start. -->
 
 ## CURRENT STATE
-_Last updated: 2026-11-20T14:58:00Z · HEAD: e21d662_
-- **Phase:** Phase 6 Refactor complete · Daylight 60/30/10 polish & responsive shell
+_Last updated: 2026-11-20T15:23:00Z · HEAD: 0456f8b_
+- **Phase:** Phase 6 Refactor complete · CORS & API resolution
 - **Completed phases:** Phase 0, Phase 1, Phase 2, Phase 3, Phase 4, Phase 5, Phase 6, Phase 7
-- **Next task:** None — All 4 pages audited, refactored, and responsive; v1.0 Pramaan ready.
+- **Next task:** None — CORS resolved, conflicting port processes terminated, 7/7 pages green.
 - **Tests:** 43 passing / 0 failing · core coverage: 100% · UI: Next.js build 7/7 pages green
 - **Backtest gate:** onion: OPEN (empirical coverage 0.85 @ 0.80 nominal [PASS]), tomato: OPEN (empirical coverage 0.82 @ 0.80 nominal [PASS])
-- **Files hot right now:** frontend/app/actuals/page.tsx, frontend/app/audit/page.tsx, frontend/components/Navbar.tsx
+- **Files hot right now:** backend/app/main.py, frontend/lib/api.ts, frontend/app/registry/page.tsx
 - **Known issues / blockers:** none
 - **Open questions for the user:** none
 
@@ -155,3 +155,16 @@ _Last updated: 2026-11-20T14:58:00Z · HEAD: e21d662_
 - **Decisions:** Adopted responsive flex-col to flex-row transition for mobile viewports to prevent fixed sidebar occlusion on smaller screens.
 - **Deferred:** none
 - **Next:** Daylight institutional redesign complete.
+
+### 2026-11-20T15:23:00Z · Phase 6 · Fix Failed to fetch warning
+- **Did:**
+  - Diagnosed root causes for browser "Failed to fetch" error and uninitialized gate cards: (1) conflicting `python -m http.server 8000` process bound on IPv6 `[::]:8000` hijacking browser requests to `localhost:8000`, and (2) missing FastAPI `CORSMiddleware` in `backend/app/main.py`.
+  - Terminated the conflicting socket process and configured `CORSMiddleware` in `backend/app/main.py` allowing all origins, credentials, methods, and headers.
+  - Updated `frontend/lib/api.ts` to dynamically adapt between `localhost:8000` and `127.0.0.1:8000` to prevent cross-hostname origin blocks, and imported `API_BASE` in `frontend/app/registry/page.tsx`.
+  - Re-verified preflight OPTIONS and GET endpoints returning 200 OK with `access-control-allow-origin` headers.
+  - Primed backtest cache for onion, tomato, and paddy crops.
+- **Files:** `backend/app/main.py`, `frontend/lib/api.ts`, `frontend/app/registry/page.tsx`
+- **Commits:** `0456f8b`
+- **Decisions:** Used universal CORS middleware in FastAPI so both `localhost:3000` and `127.0.0.1:3000` client requests succeed.
+- **Deferred:** none
+- **Next:** All API calls verified clean.
