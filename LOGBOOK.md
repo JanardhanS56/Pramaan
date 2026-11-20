@@ -3,13 +3,13 @@
 <!-- AGENT: Read only CURRENT STATE + last 3 HISTORY entries on chat start. -->
 
 ## CURRENT STATE
-_Last updated: 2026-11-20T13:24:00Z · HEAD: 5bdb801_
-- **Phase:** Phase 7 complete · v1.0 shipped
+_Last updated: 2026-11-20T14:42:00Z · HEAD: b53d510_
+- **Phase:** Phase 6 Refactor complete · Frontend daylight institutional styling
 - **Completed phases:** Phase 0, Phase 1, Phase 2, Phase 3, Phase 4, Phase 5, Phase 6, Phase 7
-- **Next task:** None — v1.0 Pramaan is shipped and ready for demonstration.
+- **Next task:** None — UI refactored to authoritative daylight institutional ledger; v1.0 Pramaan ready.
 - **Tests:** 43 passing / 0 failing · core coverage: 100% · UI: Next.js build 7/7 pages green
 - **Backtest gate:** onion: OPEN (empirical coverage 0.85 @ 0.80 nominal [PASS]), tomato: OPEN (empirical coverage 0.82 @ 0.80 nominal [PASS])
-- **Files hot right now:** README.md, scripts/demo.sh, scripts/demo.ps1, NOTES.md
+- **Files hot right now:** frontend/components/Navbar.tsx, frontend/tailwind.config.js, frontend/app/globals.css
 - **Known issues / blockers:** none
 - **Open questions for the user:** none
 
@@ -117,3 +117,17 @@ _Last updated: 2026-11-20T13:24:00Z · HEAD: 5bdb801_
 - **Decisions:** Created native PowerShell runner alongside bash script to allow zero-friction cross-platform execution on Windows without WSL or Git Bash prerequisites.
 - **Deferred:** Documented in `NOTES.md`
 - **Next:** v1.0 Pramaan is complete and ready for demonstration!
+
+### 2026-11-20T14:42:00Z · Phase 6 · Frontend daylight institutional styling refactor
+- **Did:**
+  - Replaced generic dark-mode styling with an authoritative daylight-readable agricultural-fintech ledger inspired by Linear and Stripe light mode for Sahyadri FPO.
+  - Enforced strict 60/30/10 color system: 60% warm off-white canvas (#F9FAF8) and pure white card/table surfaces (#FFFFFF); 30% solid Farmer Green (#1F4E35), hover (#163A27), and soft sage tint (#EAF2ED); 10% charcoal text (#1C201E), slate secondary (#5A635E), hairline dividers (#DCE1DD), and muted badges (#F0F2F0); muted semantic alerts for error (#B42318 on #FEF3F2) and warning (#B54708 on #FFFAEB).
+  - Replaced top horizontal navbar with fixed left vertical sidebar (width ~240px) in solid Farmer Green (#1F4E35) with flat typographic brand lockup ("Setu", "Pramaan v1.0"), crisp white links, sage-tinted active states, and "Sahyadri FPO" anchored at the bottom.
+  - Tightened border radii across the entire app to 6px (`rounded-md`) for cards and 4px (`rounded`) for buttons, inputs, and badges; removed all neon drop-shadow glows and gradients.
+  - Configured typography with Inter for UI/headings (semi-bold 600, tight tracking) and IBM Plex Mono (with tabular figures) strictly for Contract IDs, tonnages, timestamps, and calibrated `[L, U]` intervals.
+  - Maintained 100% functionality and state across all API endpoints, models, and forms.
+- **Files:** `frontend/tailwind.config.js`, `frontend/app/globals.css`, `frontend/app/layout.tsx`, `frontend/components/Navbar.tsx`, `frontend/components/ModelHealthStrip.tsx`, `frontend/components/RangeVisualizer.tsx`, `frontend/components/OverrideModal.tsx`, `frontend/app/page.tsx`, `frontend/app/contracts/[id]/page.tsx`, `frontend/app/registry/page.tsx`, `frontend/app/actuals/page.tsx`, `frontend/app/audit/page.tsx`
+- **Commits:** `b53d510`
+- **Decisions:** Kept zero-dependency styling with native Tailwind utility classes mapped to strict hex design tokens; preserved all API interfaces and routing contracts identically.
+- **Deferred:** none
+- **Next:** Frontend verification complete.
