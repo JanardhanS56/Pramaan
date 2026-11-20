@@ -33,7 +33,7 @@ export function ModelHealthStrip() {
 
   return (
     <div className="bg-white border border-[#DCE1DD] rounded-md p-4 my-6">
-      <div className="flex flex-wrap items-center justify-between gap-3 mb-3 border-b border-[#DCE1DD] pb-3">
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-3 border-b border-[#DCE1DD] pb-2.5">
         <div className="flex items-center space-x-2">
           <span className="text-xs font-semibold uppercase tracking-wider text-[#5A635E]">
             Model Health & Backtest Coverage Gates
@@ -45,7 +45,7 @@ export function ModelHealthStrip() {
         <button
           onClick={loadHealth}
           disabled={loading}
-          className="text-xs font-medium text-[#5A635E] hover:text-[#1C201E] bg-[#F9FAF8] hover:bg-white border border-[#DCE1DD] rounded px-2.5 py-1 flex items-center space-x-1.5 transition-colors"
+          className="text-xs font-medium text-[#5A635E] hover:text-[#1C201E] bg-white hover:bg-[#F9FAF8] border border-[#DCE1DD] rounded px-2.5 py-1 flex items-center space-x-1.5 transition-colors"
         >
           <RefreshCw className={`w-3 h-3 ${loading ? "animate-spin text-[#1F4E35]" : ""}`} />
           <span>Refresh Gates</span>
@@ -62,55 +62,53 @@ export function ModelHealthStrip() {
           return (
             <div
               key={crop}
-              className={`p-3 rounded-md border flex items-center justify-between transition-colors ${
+              className={`p-3.5 bg-white border border-[#DCE1DD] rounded transition-colors ${
                 r
                   ? isOpen
-                    ? "bg-[#EAF2ED]/50 border-[#C5D8CC]"
-                    : "bg-[#FEF3F2] border-[#FECDCA]"
-                  : "bg-[#F0F2F0] border-[#DCE1DD] text-[#5A635E]"
+                    ? "border-t-2 border-t-[#1F4E35]"
+                    : "border-t-2 border-t-[#B42318]"
+                  : "border-t-2 border-t-[#DCE1DD]"
               }`}
             >
-              <div>
-                <div className="flex items-center space-x-1.5">
-                  <span className="capitalize font-semibold text-xs text-[#1C201E]">{crop}</span>
-                  {r ? (
-                    <span
-                      className={`text-[10px] font-bold px-1.5 py-0.5 rounded font-mono ${
-                        isOpen
-                          ? "bg-[#1F4E35] text-white"
-                          : "bg-[#B42318] text-white"
+              <div className="flex items-center justify-between mb-2">
+                <span className="capitalize font-semibold text-xs text-[#1C201E]">{crop}</span>
+                {r ? (
+                  <span
+                    className={`text-[10px] font-bold px-1.5 py-0.5 rounded font-mono ${
+                      isOpen ? "bg-[#1F4E35] text-white" : "bg-[#B42318] text-white"
+                    }`}
+                  >
+                    GATE {r.gate_status}
+                  </span>
+                ) : (
+                  <span className="text-[10px] bg-[#F0F2F0] text-[#5A635E] border border-[#DCE1DD] px-1.5 py-0.5 rounded font-medium font-mono">
+                    UNINITIALIZED
+                  </span>
+                )}
+              </div>
+              <div className="text-xs text-[#5A635E] flex items-center justify-between">
+                {r ? (
+                  <span>
+                    Cov @0.80:{" "}
+                    <strong
+                      className={`font-mono tabular-nums font-bold ${
+                        isOpen ? "text-[#1F4E35]" : "text-[#B42318]"
                       }`}
                     >
-                      GATE {r.gate_status}
-                    </span>
-                  ) : (
-                    <span className="text-[10px] bg-[#DCE1DD] px-1.5 py-0.5 rounded text-[#5A635E] font-medium font-mono">
-                      UNINITIALIZED
-                    </span>
-                  )}
-                </div>
-                <div className="text-xs text-[#5A635E] mt-1">
-                  {r ? (
-                    <span>
-                      Cov @0.80:{" "}
-                      <strong className={`font-mono tabular-nums font-bold ${isOpen ? "text-[#1F4E35]" : "text-[#B42318]"}`}>
-                        {(cov80! * 100).toFixed(0)}%
-                      </strong>{" "}
-                      <span className="font-mono tabular-nums text-[11px]">(n={calibN})</span>
-                    </span>
-                  ) : (
-                    <span className="text-[11px]">No backtest run recorded</span>
-                  )}
-                </div>
-              </div>
-
-              {r ? (
-                isOpen ? (
-                  <CheckCircle2 className="w-4 h-4 text-[#1F4E35] flex-shrink-0" />
+                      {(cov80! * 100).toFixed(0)}%
+                    </strong>{" "}
+                    <span className="font-mono tabular-nums text-[11px]">(n={calibN})</span>
+                  </span>
                 ) : (
-                  <XCircle className="w-4 h-4 text-[#B42318] flex-shrink-0" />
-                )
-              ) : null}
+                  <span className="text-[11px]">No backtest run recorded</span>
+                )}
+                {r &&
+                  (isOpen ? (
+                    <CheckCircle2 className="w-4 h-4 text-[#1F4E35] flex-shrink-0" />
+                  ) : (
+                    <XCircle className="w-4 h-4 text-[#B42318] flex-shrink-0" />
+                  ))}
+              </div>
             </div>
           );
         })}
