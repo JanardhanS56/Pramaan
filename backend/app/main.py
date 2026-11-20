@@ -2,6 +2,7 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from backend.app.api.ingest import router as ingest_router
+from backend.app.api.backtest import router as backtest_router
 from backend.app.db import init_db
 
 @asynccontextmanager
@@ -21,3 +22,4 @@ def health_check():
     return {"status": "ok", "version": "1.0-pramaan"}
 
 app.include_router(ingest_router)
+app.include_router(backtest_router)
