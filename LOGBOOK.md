@@ -3,13 +3,13 @@
 <!-- AGENT: Read only CURRENT STATE + last 3 HISTORY entries on chat start. -->
 
 ## CURRENT STATE
-_Last updated: 2026-11-20T13:18:00Z · HEAD: e097b37_
-- **Phase:** Phase 6 — Frontend (complete)
-- **Completed phases:** Phase 0, Phase 1, Phase 2, Phase 3, Phase 4, Phase 5, Phase 6
-- **Next task:** Phase 7 — Hardening & demo (`scripts/demo.sh`, `README.md`, end-to-end verification)
+_Last updated: 2026-11-20T13:24:00Z · HEAD: 5bdb801_
+- **Phase:** Phase 7 complete · v1.0 shipped
+- **Completed phases:** Phase 0, Phase 1, Phase 2, Phase 3, Phase 4, Phase 5, Phase 6, Phase 7
+- **Next task:** None — v1.0 Pramaan is shipped and ready for demonstration.
 - **Tests:** 43 passing / 0 failing · core coverage: 100% · UI: Next.js build 7/7 pages green
-- **Backtest gate:** onion: OPEN (empirical coverage 0.85 @ 0.80 nominal [PASS])
-- **Files hot right now:** frontend/app/page.tsx, frontend/app/contracts/[id]/page.tsx, frontend/components/RangeVisualizer.tsx, frontend/components/OverrideModal.tsx
+- **Backtest gate:** onion: OPEN (empirical coverage 0.85 @ 0.80 nominal [PASS]), tomato: OPEN (empirical coverage 0.82 @ 0.80 nominal [PASS])
+- **Files hot right now:** README.md, scripts/demo.sh, scripts/demo.ps1, NOTES.md
 - **Known issues / blockers:** none
 - **Open questions for the user:** none
 
@@ -104,3 +104,16 @@ _Last updated: 2026-11-20T13:18:00Z · HEAD: e097b37_
 - **Decisions:** Visualized interval band with explicit bounds and dynamic outside-range markers to make shortfall risk intuitive; connected override workflow directly to server-side decision logging.
 - **Deferred:** none
 - **Next:** Phase 7 — Hardening & demo (`scripts/demo.sh`, `README.md`, `NOTES.md`, 5-minute clean run verification)
+
+### 2026-11-20T13:24:00Z · Phase 7 · Hardening & demo complete — v1.0 Shipped
+- **Did:**
+  - Authored `scripts/demo.sh` and `scripts/demo.ps1` for deterministic end-to-end execution (data generation -> training -> calibration -> backtest gates -> pre-generating suggestion cards -> services launch) in under 5 minutes (AC9).
+  - Wrote comprehensive `README.md` containing mission, quickstart, demo walkthrough, system architecture diagram, and plain-English explanation of conformal prediction for non-ML readers (AC10).
+  - Authored `NOTES.md` documenting key discoveries (conformal exchangeability, chronological splits, thin-data safeguards, liability firewall) and listing explicit deferred items for v2.
+  - Verified 100% pass across all 43 backend tests and Next.js production build compiling all 7 routes.
+  - Confirmed all definition-of-done criteria satisfied in full.
+- **Files:** `scripts/demo.sh`, `scripts/demo.ps1`, `README.md`, `NOTES.md`
+- **Commits:** `f51dd8b`, `5bdb801`
+- **Decisions:** Created native PowerShell runner alongside bash script to allow zero-friction cross-platform execution on Windows without WSL or Git Bash prerequisites.
+- **Deferred:** Documented in `NOTES.md`
+- **Next:** v1.0 Pramaan is complete and ready for demonstration!
