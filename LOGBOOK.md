@@ -3,13 +3,13 @@
 <!-- AGENT: Read only CURRENT STATE + last 3 HISTORY entries on chat start. -->
 
 ## CURRENT STATE
-_Last updated: 2026-11-20T15:23:00Z · HEAD: 0456f8b_
-- **Phase:** Phase 6 Refactor complete · CORS & API resolution
+_Last updated: 2026-11-20T16:00:00Z · HEAD: 309365f_
+- **Phase:** Documentation & Knowledge Base complete · v1.0
 - **Completed phases:** Phase 0, Phase 1, Phase 2, Phase 3, Phase 4, Phase 5, Phase 6, Phase 7
-- **Next task:** None — CORS resolved, conflicting port processes terminated, 7/7 pages green.
+- **Next task:** None — System is fully built, tested, styled, and documented.
 - **Tests:** 43 passing / 0 failing · core coverage: 100% · UI: Next.js build 7/7 pages green
 - **Backtest gate:** onion: OPEN (empirical coverage 0.85 @ 0.80 nominal [PASS]), tomato: OPEN (empirical coverage 0.82 @ 0.80 nominal [PASS])
-- **Files hot right now:** backend/app/main.py, frontend/lib/api.ts, frontend/app/registry/page.tsx
+- **Files hot right now:** README.md, LOGBOOK.md
 - **Known issues / blockers:** none
 - **Open questions for the user:** none
 
@@ -168,3 +168,16 @@ _Last updated: 2026-11-20T15:23:00Z · HEAD: 0456f8b_
 - **Decisions:** Used universal CORS middleware in FastAPI so both `localhost:3000` and `127.0.0.1:3000` client requests succeed.
 - **Deferred:** none
 - **Next:** All API calls verified clean.
+
+### 2026-11-20T16:00:00Z · Documentation · Comprehensive README update
+- **Did:**
+  - Fully expanded `README.md` to articulate the core agricultural-fintech problem solved by Setu: asymmetric liability in FPO forward contracts (contractual default penalty ₹1,500/t+ vs distress mandi sales), and why point estimates fail.
+  - Articulated non-technical explanation for FPO directors and board members using the weather forecast analogy, calibrated intervals, and the empirical proof gate.
+  - Documented technical and mathematical foundation: Asymmetric split-conformal prediction equations, finite-sample coverage guarantees ($P(Y_{n+1} \in [L, U]) \ge 1 - \alpha$), empirical shortfall risk CDF, and held-out coverage backtest gate ($\pm 0.05$ tolerance).
+  - Detailed the canonical benchmark dataset modeled after Sahyadri FPC (Nashik, Maharashtra): 60 farmers, 150 plots, 5 seasons (60/20/20 split), Sentinel-2 NDVI, weather features, soil types, drip/canal irrigation, and open buyer contracts (Reliance Retail, BigBasket, Sahyadri Food Park).
+  - Added formal academic and institutional references: Vovk et al. (2005), Angelopoulos & Bates (2021), Romano et al. (2019), Barber et al. (2021), Tibshirani et al. (2019), NABARD, SFAC, and NITI Aayog guidelines.
+- **Files:** `README.md`, `LOGBOOK.md`
+- **Commits:** `309365f`
+- **Decisions:** Provided both intuitive non-technical analogies and rigorous formal mathematical proofs in the documentation to address both agronomist FPO boards and ML researchers.
+- **Deferred:** none
+- **Next:** Push all commits to origin.
