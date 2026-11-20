@@ -3,13 +3,13 @@
 <!-- AGENT: Read only CURRENT STATE + last 3 HISTORY entries on chat start. -->
 
 ## CURRENT STATE
-_Last updated: 2026-11-20T13:07:00Z · HEAD: 6f80661_
-- **Phase:** Phase 5 — API & audit (complete)
-- **Completed phases:** Phase 0, Phase 1, Phase 2, Phase 3, Phase 4, Phase 5
-- **Next task:** Phase 6 — Frontend (`frontend/` Next.js 14 App Router + Tailwind + Recharts)
-- **Tests:** 43 passing / 0 failing · core coverage: 100%
+_Last updated: 2026-11-20T13:18:00Z · HEAD: e097b37_
+- **Phase:** Phase 6 — Frontend (complete)
+- **Completed phases:** Phase 0, Phase 1, Phase 2, Phase 3, Phase 4, Phase 5, Phase 6
+- **Next task:** Phase 7 — Hardening & demo (`scripts/demo.sh`, `README.md`, end-to-end verification)
+- **Tests:** 43 passing / 0 failing · core coverage: 100% · UI: Next.js build 7/7 pages green
 - **Backtest gate:** onion: OPEN (empirical coverage 0.85 @ 0.80 nominal [PASS])
-- **Files hot right now:** backend/app/api/suggestions.py, backend/app/api/audit.py, backend/app/api/pipeline.py, backend/app/core/audit.py, backend/tests/test_audit.py
+- **Files hot right now:** frontend/app/page.tsx, frontend/app/contracts/[id]/page.tsx, frontend/components/RangeVisualizer.tsx, frontend/components/OverrideModal.tsx
 - **Known issues / blockers:** none
 - **Open questions for the user:** none
 
@@ -89,3 +89,18 @@ _Last updated: 2026-11-20T13:07:00Z · HEAD: 6f80661_
 - **Decisions:** Enforced human gate strictly server-side rather than delegating validation to the frontend; re-runs generate distinct suggestion IDs to guarantee complete audit reproducibility.
 - **Deferred:** none
 - **Next:** Phase 6 — Frontend (Next.js 14 App Router, Commitment Readiness Card, Dashboard, Registry, Actuals, Audit)
+
+### 2026-11-20T13:18:00Z · Phase 6 · Frontend complete
+- **Did:**
+  - Scaffolded Next.js 14 App Router application with Tailwind CSS and typed API client in `frontend/`.
+  - Built Commitment Readiness Card screen (`/contracts/[id]`) rendering calibrated horizontal band `[L, U]`, point estimate marker, and target requirement marker `Q`.
+  - Implemented 80%/90% confidence toggle, shortfall risk gauge, prominent recommended commitment, plain-language empirical drivers, and metadata footer with input hash copying.
+  - Implemented board override modal with mandatory reason and actor enforcement.
+  - Built Dashboard (`/`) with open contracts table and model health strip.
+  - Built Registry (`/registry`), Actuals & Ledger (`/actuals`), and Audit Trail (`/audit`) screens.
+  - Validated production build (`npm run build`) compiling all 7 routes with 0 errors.
+- **Files:** `frontend/package.json`, `frontend/lib/api.ts`, `frontend/components/RangeVisualizer.tsx`, `frontend/components/OverrideModal.tsx`, `frontend/components/ModelHealthStrip.tsx`, `frontend/app/page.tsx`, `frontend/app/contracts/[id]/page.tsx`, `frontend/app/registry/page.tsx`, `frontend/app/actuals/page.tsx`, `frontend/app/audit/page.tsx`
+- **Commits:** `879dfa8`, `61dfeb8`, `e097b37`
+- **Decisions:** Visualized interval band with explicit bounds and dynamic outside-range markers to make shortfall risk intuitive; connected override workflow directly to server-side decision logging.
+- **Deferred:** none
+- **Next:** Phase 7 — Hardening & demo (`scripts/demo.sh`, `README.md`, `NOTES.md`, 5-minute clean run verification)
