@@ -3,13 +3,13 @@
 <!-- AGENT: Read only CURRENT STATE + last 3 HISTORY entries on chat start. -->
 
 ## CURRENT STATE
-_Last updated: 2026-11-20T10:28:00Z · HEAD: 589567e_
-- **Phase:** Phase 1 — Ingest (complete)
-- **Completed phases:** Phase 0, Phase 1
-- **Next task:** Phase 2 — Feature builder (`backend/app/core/features.py`) and point forecaster
-- **Tests:** 12 passing / 0 failing · core coverage: 100%
+_Last updated: 2026-11-20T10:35:00Z · HEAD: 2c09240_
+- **Phase:** Phase 2 — Baseline forecaster (complete)
+- **Completed phases:** Phase 0, Phase 1, Phase 2
+- **Next task:** Phase 3 — Conformal calibration & backtest (`backend/app/core/conformal.py`, `backend/app/core/backtest.py`)
+- **Tests:** 15 passing / 0 failing · core coverage: 100%
 - **Backtest gate:** none (P3 onward)
-- **Files hot right now:** backend/app/core/ingest.py, backend/app/api/ingest.py, backend/tests/test_ingest.py
+- **Files hot right now:** backend/app/core/features.py, backend/app/core/forecaster.py, scripts/train.py, backend/tests/test_forecaster.py
 - **Known issues / blockers:** none
 - **Open questions for the user:** none
 
@@ -45,3 +45,17 @@ _Last updated: 2026-11-20T10:28:00Z · HEAD: 589567e_
 - **Decisions:** Enforced strict non-negative grade percentages in synthetic data generator; utilized SQLite StaticPool in tests for shared in-memory DB across request threads.
 - **Deferred:** none
 - **Next:** Phase 2 — Baseline forecaster (features + point models)
+
+### 2026-11-20T10:35:00Z · Phase 2 · Baseline forecaster complete
+- **Did:**
+  - Implemented feature extraction pipeline in `backend/app/core/features.py` with frozen `FEATURE_COLUMNS` (`v1.0`).
+  - Added chronological season-based train/calib/backtest split avoiding random leakage.
+  - Implemented per-crop forecaster in `backend/app/core/forecaster.py` with `GradientBoostingRegressor` and thin-data guard (fallback to `SeasonalMeanBaselineModel` when train rows < 60 or calib rows < 30).
+  - Implemented artifact persistence via joblib and `model_run` logging in SQLite.
+  - Implemented `scripts/train.py` CLI supporting `--crop` and `--seed`.
+  - Verified AC3 in `backend/tests/test_forecaster.py` (fixed seed reproduces identical metrics, thin-data guard triggers seasonal-mean baseline and flags is_thin_data).
+- **Files:** `backend/app/core/features.py`, `backend/app/core/forecaster.py`, `scripts/train.py`, `backend/tests/test_forecaster.py`, `backend/app/seed/generator.py`
+- **Commits:** `7ab45c9`, `4b382d2`, `5adb497`, `2c09240`
+- **Decisions:** Stratified synthetic plots so primary crop (onion) has >= 60 training rows and >= 30 calibration rows, while paddy triggers thin-data guards for thorough testing of both pathways.
+- **Deferred:** none
+- **Next:** Phase 3 — Conformal calibration & backtest (the critical path)
