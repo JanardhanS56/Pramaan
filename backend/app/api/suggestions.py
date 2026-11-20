@@ -340,12 +340,21 @@ def get_suggestion_card(
     suggestion_id: str,
     session: Session = Depends(get_session),
 ):
-    """Retrieve full Commitment Readiness Card with drivers and audit metadata."""
+    """Retrieve full Commitment Readiness Card with drivers and audit metadata.
+    Accepts either suggestion_id (SUG-*) or contract_id (CTR-*).
+    """
     suggestion = session.get(Suggestion, suggestion_id)
+    if not suggestion:
+        suggestion = session.exec(
+            select(Suggestion)
+            .where(Suggestion.contract_id == suggestion_id)
+            .order_by(Suggestion.created_at.desc())
+        ).first()
+
     if not suggestion:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail={"error": {"code": "SUGGESTION_NOT_FOUND", "message": f"Suggestion {suggestion_id} not found"}},
+            detail={"error": {"code": "SUGGESTION_NOT_FOUND", "message": f"Suggestion or contract '{suggestion_id}' not found"}},
         )
     ctr = session.get(Contract, suggestion.contract_id)
     calib = session.get(CalibrationRun, suggestion.calibration_run_id)
@@ -358,12 +367,20 @@ def record_decision(
     session: Session = Depends(get_session),
 ):
     """Record human decision on a Commitment Readiness Card.
+    Accepts either suggestion_id or contract_id.
     
     Hard Rule (AC8, design.md §8):
       Overriding an AMBER/RED recommendation requires a non-empty reason and actor.
       Enforced server-side: returns HTTP 422 REASON_REQUIRED on failure.
     """
     suggestion = session.get(Suggestion, suggestion_id)
+    if not suggestion:
+        suggestion = session.exec(
+            select(Suggestion)
+            .where(Suggestion.contract_id == suggestion_id)
+            .order_by(Suggestion.created_at.desc())
+        ).first()
+
     if not suggestion:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,

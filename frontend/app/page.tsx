@@ -187,7 +187,7 @@ export default function DashboardPage() {
                     <td className="py-3.5 px-5">{getStatusBadge(s.status)}</td>
                     <td className="py-3.5 px-5 text-right">
                       <Link
-                        href={`/contracts/${s.id}`}
+                        href={`/contracts/${s.contract_id || s.id}`}
                         className="inline-flex items-center space-x-1 text-xs font-semibold px-2.5 py-1 rounded bg-white hover:bg-[#F0F2F0] text-[#1F4E35] border border-[#DCE1DD] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1F4E35]/20"
                       >
                         <span>View Card</span>
