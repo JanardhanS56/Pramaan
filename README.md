@@ -1,4 +1,5 @@
-# Setu v1.0 "Pramaan" — Commitment Confidence Engine for FPOs
+# Setu: "Pramaan" — Commitment Confidence Engine for FPOs
+>
 >
 > **"We don't predict the harvest. We tell the FPO how much it is allowed to promise — with a confidence level that is empirically proven, not asserted."**
 
