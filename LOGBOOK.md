@@ -3,13 +3,13 @@
 <!-- AGENT: Read only CURRENT STATE + last 3 HISTORY entries on chat start. -->
 
 ## CURRENT STATE
-_Last updated: 2026-11-20T12:52:00Z · HEAD: 9f587fc_
-- **Phase:** Phase 4 — Decision engine & explanations (complete)
-- **Completed phases:** Phase 0, Phase 1, Phase 2, Phase 3, Phase 4
-- **Next task:** Phase 5 — API & audit (`backend/app/api/suggestions.py`, `backend/app/api/audit.py`, `backend/app/core/audit.py`)
-- **Tests:** 31 passing / 0 failing · core coverage: 100%
+_Last updated: 2026-11-20T13:07:00Z · HEAD: 6f80661_
+- **Phase:** Phase 5 — API & audit (complete)
+- **Completed phases:** Phase 0, Phase 1, Phase 2, Phase 3, Phase 4, Phase 5
+- **Next task:** Phase 6 — Frontend (`frontend/` Next.js 14 App Router + Tailwind + Recharts)
+- **Tests:** 43 passing / 0 failing · core coverage: 100%
 - **Backtest gate:** onion: OPEN (empirical coverage 0.85 @ 0.80 nominal [PASS])
-- **Files hot right now:** backend/app/core/decision.py, backend/app/core/explain.py, backend/app/config.py, backend/tests/test_decision.py, backend/tests/test_explain.py
+- **Files hot right now:** backend/app/api/suggestions.py, backend/app/api/audit.py, backend/app/api/pipeline.py, backend/app/core/audit.py, backend/tests/test_audit.py
 - **Known issues / blockers:** none
 - **Open questions for the user:** none
 
@@ -74,3 +74,18 @@ _Last updated: 2026-11-20T12:52:00Z · HEAD: 9f587fc_
 - **Decisions:** Centralized `AMBER_MIN_LOWER_RATIO` (0.70) and `AMBER_MIN_UPPER_RATIO` (0.75) in `config.py`; required `L < U` for non-degenerate range AMBER classification so degenerate point predictions fall back to RED on shortfall.
 - **Deferred:** none
 - **Next:** Phase 5 — API & audit (FastAPI endpoints, suggestion generation, human gate reason enforcement, SHA-256 input hash, append-only audit trail)
+
+### 2026-11-20T13:07:00Z · Phase 5 · API & audit complete
+- **Did:**
+  - Defined Pydantic v2 schemas in `backend/app/schemas/suggestions.py` covering suggestions, decisions, audit, and pipeline requests/responses matching design.md §10 and expected_output.md §2.1.
+  - Implemented append-only audit trail and deterministic SHA-256 `input_hash` generation in `backend/app/core/audit.py`.
+  - Built `POST /suggestions/generate`, `GET /suggestions`, and `GET /suggestions/{id}` endpoints enforcing backtest gate and preserving suggestion row immutability on re-runs.
+  - Implemented server-side human gate in `POST /suggestions/{id}/decision` returning HTTP 422 `REASON_REQUIRED` when overriding AMBER/RED suggestions without a reason, and `ACTOR_REQUIRED` when actor is missing.
+  - Built paginated audit log endpoint `GET /audit` with entity and entity_id filters.
+  - Built pipeline execution endpoints `POST /train`, `POST /calibrate`, and `POST /seed/generate`.
+  - Verified AC8 in `backend/tests/test_audit.py` with 12 comprehensive unit and integration tests.
+- **Files:** `backend/app/schemas/suggestions.py`, `backend/app/schemas/__init__.py`, `backend/app/core/audit.py`, `backend/app/api/suggestions.py`, `backend/app/api/audit.py`, `backend/app/api/pipeline.py`, `backend/app/main.py`, `backend/tests/test_audit.py`
+- **Commits:** `c790c47`, `4c1af5e`, `8b2db34`, `6f80661`
+- **Decisions:** Enforced human gate strictly server-side rather than delegating validation to the frontend; re-runs generate distinct suggestion IDs to guarantee complete audit reproducibility.
+- **Deferred:** none
+- **Next:** Phase 6 — Frontend (Next.js 14 App Router, Commitment Readiness Card, Dashboard, Registry, Actuals, Audit)
