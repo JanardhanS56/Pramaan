@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Upload, CheckCircle2, AlertCircle } from "lucide-react";
+import { API_BASE } from "@/lib/api";
 
 export default function RegistryPage() {
   const [fileType, setFileType] = useState("farmers");
@@ -21,7 +22,7 @@ export default function RegistryPage() {
       const formData = new FormData();
       formData.append("file", file);
 
-      const res = await fetch(`http://127.0.0.1:8000/ingest/csv?entity_type=${fileType}`, {
+      const res = await fetch(`${API_BASE}/ingest/csv?entity_type=${fileType}`, {
         method: "POST",
         body: formData,
       });
