@@ -21,28 +21,35 @@ export function Navbar() {
   ];
 
   return (
-    <aside className="w-60 min-w-[240px] fixed inset-y-0 left-0 bg-[#1F4E35] text-white flex flex-col justify-between z-40 border-r border-[#163A27] select-none">
+    <aside className="w-full md:w-60 md:min-w-[240px] md:fixed md:inset-y-0 md:left-0 bg-[#1F4E35] text-white flex flex-col justify-between z-40 md:border-r border-[#163A27] select-none sticky top-0 md:top-0">
       {/* Top Branding Section */}
       <div>
-        <div className="px-5 py-6 border-b border-[#163A27]">
-          <div className="flex items-baseline space-x-2">
-            <Link
-              href="/"
-              className="text-xl font-bold tracking-tight text-white hover:text-[#EAF2ED] transition-colors"
-            >
-              Setu
-            </Link>
-            <span className="text-[10px] font-mono uppercase tracking-wider text-[#EAF2ED]/80 bg-[#163A27] px-1.5 py-0.5 rounded-[4px] border border-[#163A27]">
-              Pramaan v1.0
+        <div className="px-4 py-3.5 md:px-5 md:py-6 border-b border-[#163A27] flex items-center justify-between md:block">
+          <div>
+            <div className="flex items-baseline space-x-2">
+              <Link
+                href="/"
+                className="text-lg md:text-xl font-bold tracking-tight text-white hover:text-[#EAF2ED] transition-colors"
+              >
+                Setu
+              </Link>
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[#EAF2ED]/80 bg-[#163A27] px-1.5 py-0.5 rounded border border-[#163A27]">
+                Pramaan v1.0
+              </span>
+            </div>
+            <p className="text-[11px] text-[#EAF2ED]/70 mt-0.5 md:mt-1 font-medium">
+              Commitment Confidence Engine
+            </p>
+          </div>
+          <div className="md:hidden text-right">
+            <span className="text-[10px] font-mono text-[#EAF2ED]/80 bg-[#163A27] px-2 py-0.5 rounded border border-[#163A27]">
+              Sahyadri FPO
             </span>
           </div>
-          <p className="text-[11px] text-[#EAF2ED]/70 mt-1 font-medium">
-            Commitment Confidence Engine
-          </p>
         </div>
 
         {/* Navigation Links */}
-        <nav className="p-3 space-y-1">
+        <nav className="p-2 md:p-3 flex md:flex-col overflow-x-auto gap-1 border-b md:border-b-0 border-[#163A27]">
           {links.map((link) => {
             const isActive =
               pathname === link.href ||
@@ -53,7 +60,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`flex items-center space-x-2.5 px-3 py-2 rounded-[4px] text-xs transition-colors ${
+                className={`flex items-center space-x-2 px-3 py-1.5 md:py-2 rounded text-xs whitespace-nowrap transition-colors focus:outline-none focus:ring-2 focus:ring-[#EAF2ED]/40 ${
                   isActive
                     ? "bg-[#EAF2ED] text-[#1F4E35] font-semibold"
                     : "text-white/90 hover:bg-[#163A27] hover:text-white font-medium"
@@ -71,8 +78,8 @@ export function Navbar() {
         </nav>
       </div>
 
-      {/* Anchored Bottom Workspace Anchor */}
-      <div className="p-4 border-t border-[#163A27] bg-[#163A27]/50">
+      {/* Anchored Bottom Workspace Anchor (Desktop) */}
+      <div className="hidden md:block p-4 border-t border-[#163A27] bg-[#163A27]/50">
         <div className="text-xs font-semibold text-white tracking-tight">
           Sahyadri FPO
         </div>

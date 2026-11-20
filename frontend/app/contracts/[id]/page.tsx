@@ -146,7 +146,7 @@ export default function ReadinessCardPage() {
       <div>
         <Link
           href="/"
-          className="inline-flex items-center space-x-1.5 text-xs font-semibold text-[#5A635E] hover:text-[#1C201E] transition-colors"
+          className="inline-flex items-center space-x-1.5 text-xs font-semibold text-[#5A635E] hover:text-[#1C201E] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1F4E35]/20 rounded"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to Open Contracts</span>
@@ -188,7 +188,7 @@ export default function ReadinessCardPage() {
               <span className="text-[11px] font-semibold text-[#5A635E] px-2">Confidence:</span>
               <button
                 onClick={() => handleConfidenceChange(0.80)}
-                className={`px-2.5 py-1 rounded text-xs font-bold transition-all ${
+                className={`px-2.5 py-1 rounded text-xs font-bold transition-all focus:outline-none focus:ring-2 focus:ring-[#1F4E35]/20 ${
                   confidence === 0.80
                     ? "bg-[#1F4E35] text-white"
                     : "text-[#5A635E] hover:text-[#1C201E]"
@@ -198,7 +198,7 @@ export default function ReadinessCardPage() {
               </button>
               <button
                 onClick={() => handleConfidenceChange(0.90)}
-                className={`px-2.5 py-1 rounded text-xs font-bold transition-all ${
+                className={`px-2.5 py-1 rounded text-xs font-bold transition-all focus:outline-none focus:ring-2 focus:ring-[#1F4E35]/20 ${
                   confidence === 0.90
                     ? "bg-[#1F4E35] text-white"
                     : "text-[#5A635E] hover:text-[#1C201E]"
@@ -326,7 +326,7 @@ export default function ReadinessCardPage() {
             <button
               onClick={handleVerifyCommit}
               disabled={actionLoading}
-              className="w-full sm:w-auto px-5 py-2.5 rounded bg-[#1F4E35] hover:bg-[#163A27] disabled:bg-[#DCE1DD] text-white font-semibold text-xs transition-colors flex items-center justify-center space-x-2"
+              className="w-full sm:w-auto px-5 py-2.5 rounded bg-[#1F4E35] hover:bg-[#163A27] disabled:bg-[#DCE1DD] text-white font-semibold text-xs transition-colors flex items-center justify-center space-x-2 focus:outline-none focus:ring-2 focus:ring-[#1F4E35]/20"
             >
               <CheckCircle2 className="w-3.5 h-3.5" />
               <span>Verify stock & commit {(card.recommended_commitment_t || card.recommended_t).toFixed(0)} t</span>
@@ -335,7 +335,7 @@ export default function ReadinessCardPage() {
             <button
               onClick={() => setShowOverride(true)}
               disabled={actionLoading}
-              className="w-full sm:w-auto px-4 py-2.5 rounded bg-white hover:bg-[#FFFAEB] text-[#B54708] border border-[#FEDF89] font-semibold text-xs transition-colors flex items-center justify-center space-x-2"
+              className="w-full sm:w-auto px-4 py-2.5 rounded bg-white hover:bg-[#FFFAEB] text-[#B54708] border border-[#FEDF89] font-semibold text-xs transition-colors flex items-center justify-center space-x-2 focus:outline-none focus:ring-2 focus:ring-[#B54708]/20"
             >
               <AlertTriangle className="w-3.5 h-3.5 text-[#B54708]" />
               <span>Override → board</span>
@@ -354,7 +354,7 @@ export default function ReadinessCardPage() {
 
           <button
             onClick={copyInputHash}
-            className="flex items-center space-x-1.5 text-[#5A635E] hover:text-[#1C201E] transition-colors"
+            className="flex items-center space-x-1.5 text-[#5A635E] hover:text-[#1C201E] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1F4E35]/20 rounded px-1"
             title="SHA-256 Input Hash"
           >
             {copiedHash ? <Check className="w-3.5 h-3.5 text-[#1F4E35]" /> : <Copy className="w-3.5 h-3.5" />}

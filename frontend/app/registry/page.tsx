@@ -121,7 +121,7 @@ export default function RegistryPage() {
             <select
               value={fileType}
               onChange={(e) => setFileType(e.target.value)}
-              className="w-full bg-[#F9FAF8] border border-[#DCE1DD] rounded px-3 py-2.5 text-xs text-[#1C201E] focus:outline-none focus:border-[#1F4E35] focus:bg-white font-medium"
+              className="w-full bg-[#F9FAF8] border border-[#DCE1DD] rounded px-3 py-2.5 text-xs text-[#1C201E] focus:outline-none focus:ring-2 focus:ring-[#1F4E35]/20 focus:border-[#1F4E35] focus:bg-white font-medium transition-all"
             >
               <option value="farmers">farmers.csv (Member Farmers)</option>
               <option value="plots">plots.csv (Surveyed Geo Plots)</option>
@@ -146,7 +146,7 @@ export default function RegistryPage() {
                 Select or Drop CSV File
               </span>
             </div>
-            <label className="flex flex-col items-center justify-center border-2 border-dashed border-[#DCE1DD] hover:border-[#1F4E35] bg-[#F9FAF8] hover:bg-[#EAF2ED]/30 rounded p-6 cursor-pointer transition-colors text-center group">
+            <label className="flex flex-col items-center justify-center border-2 border-dashed border-[#DCE1DD] hover:border-[#1F4E35] focus-within:border-[#1F4E35] focus-within:ring-2 focus-within:ring-[#1F4E35]/20 bg-[#F9FAF8] hover:bg-[#EAF2ED]/30 rounded p-6 cursor-pointer transition-all text-center group">
               <Upload className="w-6 h-6 text-[#1F4E35] group-hover:scale-105 transition-transform mb-2" />
               <span className="text-xs font-semibold text-[#1C201E]">
                 {loading ? "Validating & Ingesting..." : "Click to select or drag and drop CSV"}

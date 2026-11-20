@@ -55,7 +55,7 @@ export function OverrideModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1C201E]/40 backdrop-blur-none p-4">
       <div className="bg-white border border-[#DCE1DD] rounded-md max-w-lg w-full p-6 text-[#1C201E] shadow-xl">
         <div className="flex justify-between items-start pb-3 border-b border-[#DCE1DD]">
           <div className="flex items-center space-x-2 text-[#B54708]">
@@ -66,7 +66,7 @@ export function OverrideModal({
           </div>
           <button
             onClick={onClose}
-            className="text-[#5A635E] hover:text-[#1C201E] transition-colors"
+            className="text-[#5A635E] hover:text-[#1C201E] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1F4E35]/20 rounded"
           >
             <X className="w-4 h-4" />
           </button>
@@ -112,7 +112,7 @@ export function OverrideModal({
               placeholder="e.g. board_chairperson, director_ops"
               value={actor}
               onChange={(e) => setActor(e.target.value)}
-              className="w-full bg-white border border-[#DCE1DD] rounded px-3 py-2 text-xs text-[#1C201E] focus:outline-none focus:border-[#1F4E35]"
+              className="w-full bg-white border border-[#DCE1DD] rounded px-3 py-2 text-xs text-[#1C201E] focus:outline-none focus:ring-2 focus:ring-[#1F4E35]/20 focus:border-[#1F4E35] transition-all"
             />
           </div>
 
@@ -126,7 +126,7 @@ export function OverrideModal({
               placeholder="State explicit justification (e.g. verified 25t buffer stock in local cold storage warehouse; board resolution #42)."
               value={reason}
               onChange={(e) => setReason(e.target.value)}
-              className="w-full bg-white border border-[#DCE1DD] rounded px-3 py-2 text-xs text-[#1C201E] focus:outline-none focus:border-[#1F4E35]"
+              className="w-full bg-white border border-[#DCE1DD] rounded px-3 py-2 text-xs text-[#1C201E] focus:outline-none focus:ring-2 focus:ring-[#1F4E35]/20 focus:border-[#1F4E35] transition-all"
             />
           </div>
 
@@ -135,14 +135,14 @@ export function OverrideModal({
               type="button"
               onClick={onClose}
               disabled={loading}
-              className="px-4 py-2 text-xs font-medium text-[#1C201E] bg-[#F0F2F0] hover:bg-[#E2E6E2] border border-[#DCE1DD] rounded transition-colors"
+              className="px-4 py-2 text-xs font-medium text-[#1C201E] bg-[#F0F2F0] hover:bg-[#E2E6E2] border border-[#DCE1DD] rounded transition-colors focus:outline-none focus:ring-2 focus:ring-[#1F4E35]/20"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={loading}
-              className="px-4 py-2 text-xs font-semibold text-white bg-[#B54708] hover:bg-[#93370D] rounded transition-colors flex items-center space-x-1.5"
+              className="px-4 py-2 text-xs font-semibold text-white bg-[#B54708] hover:bg-[#93370D] rounded transition-colors flex items-center space-x-1.5 focus:outline-none focus:ring-2 focus:ring-[#B54708]/30"
             >
               {loading ? "Recording..." : "Record Board Override"}
             </button>

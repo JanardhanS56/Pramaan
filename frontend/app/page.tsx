@@ -90,7 +90,7 @@ export default function DashboardPage() {
         <button
           onClick={handleGenerate}
           disabled={generating}
-          className="px-3.5 py-2 bg-[#1F4E35] hover:bg-[#163A27] disabled:bg-[#DCE1DD] text-white rounded font-semibold text-xs transition-colors flex items-center space-x-2 shadow-none"
+          className="px-3.5 py-2 bg-[#1F4E35] hover:bg-[#163A27] disabled:bg-[#DCE1DD] text-white rounded font-semibold text-xs transition-colors flex items-center space-x-2 shadow-none focus:outline-none focus:ring-2 focus:ring-[#1F4E35]/20"
         >
           <SlidersHorizontal className={`w-3.5 h-3.5 ${generating ? "animate-spin text-[#EAF2ED]" : ""}`} />
           <span>{generating ? "Evaluating Gates..." : "Run Readiness Pipeline"}</span>
@@ -188,7 +188,7 @@ export default function DashboardPage() {
                     <td className="py-3.5 px-5 text-right">
                       <Link
                         href={`/contracts/${s.id}`}
-                        className="inline-flex items-center space-x-1 text-xs font-semibold px-2.5 py-1 rounded bg-white hover:bg-[#F0F2F0] text-[#1F4E35] border border-[#DCE1DD] transition-colors"
+                        className="inline-flex items-center space-x-1 text-xs font-semibold px-2.5 py-1 rounded bg-white hover:bg-[#F0F2F0] text-[#1F4E35] border border-[#DCE1DD] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1F4E35]/20"
                       >
                         <span>View Card</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
