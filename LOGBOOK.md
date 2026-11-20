@@ -3,13 +3,13 @@
 <!-- AGENT: Read only CURRENT STATE + last 3 HISTORY entries on chat start. -->
 
 ## CURRENT STATE
-_Last updated: 2026-11-20T14:42:00Z · HEAD: b53d510_
-- **Phase:** Phase 6 Refactor complete · Frontend daylight institutional styling
+_Last updated: 2026-11-20T14:49:00Z · HEAD: a90310d_
+- **Phase:** Phase 6 Refactor complete · Dashboard and Registry redesign
 - **Completed phases:** Phase 0, Phase 1, Phase 2, Phase 3, Phase 4, Phase 5, Phase 6, Phase 7
-- **Next task:** None — UI refactored to authoritative daylight institutional ledger; v1.0 Pramaan ready.
+- **Next task:** None — Dashboard and Registry redesign complete; v1.0 Pramaan ready.
 - **Tests:** 43 passing / 0 failing · core coverage: 100% · UI: Next.js build 7/7 pages green
 - **Backtest gate:** onion: OPEN (empirical coverage 0.85 @ 0.80 nominal [PASS]), tomato: OPEN (empirical coverage 0.82 @ 0.80 nominal [PASS])
-- **Files hot right now:** frontend/components/Navbar.tsx, frontend/tailwind.config.js, frontend/app/globals.css
+- **Files hot right now:** frontend/app/page.tsx, frontend/app/registry/page.tsx, frontend/components/ModelHealthStrip.tsx
 - **Known issues / blockers:** none
 - **Open questions for the user:** none
 
@@ -131,3 +131,14 @@ _Last updated: 2026-11-20T14:42:00Z · HEAD: b53d510_
 - **Decisions:** Kept zero-dependency styling with native Tailwind utility classes mapped to strict hex design tokens; preserved all API interfaces and routing contracts identically.
 - **Deferred:** none
 - **Next:** Frontend verification complete.
+
+### 2026-11-20T14:49:00Z · Phase 6 · Dashboard and Registry redesign
+- **Did:**
+  - Redesigned Commitment Dashboard: replaced sparkle icon with domain-appropriate SlidersHorizontal icon in a solid Farmer Green button ("Run Readiness Pipeline"); converted error alerts into flat, left-accented alert bars with 3px solid #B42318 border and subtle "Retry" text button; converted Model Health & Backtest Coverage Gates into a crisp 3-column horizontal status strip on white cards with 2px Farmer Green top border when active/calibrated, neutral grey when uninitialized, and clean white "Refresh Gates" button with 1px grey border; styled Open Contracts table with full-width generous padding, solid sage header, 1px row dividers, and clean empty state with muted icon and concise instructions.
+  - Redesigned FPO Member & Plot Registry: moved the 3 KPI summary metrics (Active Farmers: 60, Registered Plots: 150, Historical Seasons: 5) to the top of the page as a unified 3-column metric bar with vertical grey dividers, large crisp tabular numbers in Farmer Green (#1F4E35), and subtle grey sub-labels below (removing colorful neon document icons); restructured the CSV upload into a 2-step card with Step 1 (Target Entity Table dropdown) on the left and Step 2 (clean dashed-border file dropzone in white/sage tint) on the right.
+  - Verified 100% build pass (`npm run build`) with zero regressions across all 7 routes.
+- **Files:** `frontend/app/page.tsx`, `frontend/components/ModelHealthStrip.tsx`, `frontend/app/registry/page.tsx`
+- **Commits:** `a90310d`
+- **Decisions:** Structured CSV upload as a guided two-step flow to emphasize referential integrity and table schema selection prior to file drop.
+- **Deferred:** none
+- **Next:** Dashboard and Registry redesign complete.
