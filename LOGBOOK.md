@@ -3,13 +3,13 @@
 <!-- AGENT: Read only CURRENT STATE + last 3 HISTORY entries on chat start. -->
 
 ## CURRENT STATE
-_Last updated: 2026-11-20T14:49:00Z · HEAD: a90310d_
-- **Phase:** Phase 6 Refactor complete · Dashboard and Registry redesign
+_Last updated: 2026-11-20T14:58:00Z · HEAD: e21d662_
+- **Phase:** Phase 6 Refactor complete · Daylight 60/30/10 polish & responsive shell
 - **Completed phases:** Phase 0, Phase 1, Phase 2, Phase 3, Phase 4, Phase 5, Phase 6, Phase 7
-- **Next task:** None — Dashboard and Registry redesign complete; v1.0 Pramaan ready.
+- **Next task:** None — All 4 pages audited, refactored, and responsive; v1.0 Pramaan ready.
 - **Tests:** 43 passing / 0 failing · core coverage: 100% · UI: Next.js build 7/7 pages green
 - **Backtest gate:** onion: OPEN (empirical coverage 0.85 @ 0.80 nominal [PASS]), tomato: OPEN (empirical coverage 0.82 @ 0.80 nominal [PASS])
-- **Files hot right now:** frontend/app/page.tsx, frontend/app/registry/page.tsx, frontend/components/ModelHealthStrip.tsx
+- **Files hot right now:** frontend/app/actuals/page.tsx, frontend/app/audit/page.tsx, frontend/components/Navbar.tsx
 - **Known issues / blockers:** none
 - **Open questions for the user:** none
 
@@ -142,3 +142,16 @@ _Last updated: 2026-11-20T14:49:00Z · HEAD: a90310d_
 - **Decisions:** Structured CSV upload as a guided two-step flow to emphasize referential integrity and table schema selection prior to file drop.
 - **Deferred:** none
 - **Next:** Dashboard and Registry redesign complete.
+
+### 2026-11-20T14:58:00Z · Phase 6 · Actuals, Audit, and responsive final polish
+- **Did:**
+  - Redesigned Actuals & Calibration Ledger: placed "Record Delivery Outcome" form in clean white card with subtle 3px solid Farmer Green left accent, aligning Contract ID, Quantity, Grade, and solid Farmer Green button on a single horizontal baseline; styled Historical Delivery Ledger as a high-trust accounting ledger with right-aligned monospace tabular figures, subtle borderless badges for fulfilled/shortfall, and subtle zebra striping (`even:bg-[#FAFBF9]`) with clean hover states (`hover:bg-[#F4F7F5]`).
+  - Redesigned Immutable Audit Trail: removed green shield from header; integrated the "Filter Entity" dropdown and record count directly into the table card's top toolbar; formatted high-density table with monospace identifiers, UTC timestamps, and monospace code pill payload tooltips.
+  - Completed comprehensive visual audit across all pages and components: eliminated all dark-mode and neon classes, standardized Farmer Green focus rings (`focus:ring-2 focus:ring-[#1F4E35]/20 focus:border-[#1F4E35]`) on all interactive inputs, selects, and buttons.
+  - Implemented responsive navigation so the solid Farmer Green sidebar collapses cleanly into a sleek top navigation bar on mobile/tablet viewports without overlapping content.
+  - Verified 100% Next.js production build (`npm run build`) passing across all 7 routes with zero errors.
+- **Files:** `frontend/app/actuals/page.tsx`, `frontend/app/audit/page.tsx`, `frontend/components/Navbar.tsx`, `frontend/app/layout.tsx`, `frontend/components/OverrideModal.tsx`, `frontend/app/contracts/[id]/page.tsx`, `frontend/app/page.tsx`, `frontend/app/registry/page.tsx`
+- **Commits:** `e21d662`
+- **Decisions:** Adopted responsive flex-col to flex-row transition for mobile viewports to prevent fixed sidebar occlusion on smaller screens.
+- **Deferred:** none
+- **Next:** Daylight institutional redesign complete.
