@@ -1,14 +1,17 @@
 """SQLModel data models matching design.md §2."""
 from typing import Optional
-from datetime import datetime, date
+from datetime import datetime, date, timezone
 from sqlmodel import SQLModel, Field
+
+def utc_now() -> datetime:
+    return datetime.now(timezone.utc)
 
 class FPO(SQLModel, table=True):
     __tablename__ = "fpo"
     id: str = Field(primary_key=True)
     name: str
     state: str
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=utc_now)
 
 class Farmer(SQLModel, table=True):
     __tablename__ = "farmer"
@@ -86,7 +89,7 @@ class ModelRun(SQLModel, table=True):
     id: str = Field(primary_key=True)
     crop: str
     version: str
-    trained_at: datetime = Field(default_factory=datetime.utcnow)
+    trained_at: datetime = Field(default_factory=utc_now)
     features_json: str
     metrics_json: str
     artifact_path: str
@@ -117,7 +120,7 @@ class Suggestion(SQLModel, table=True):
     recommended_t: float
     drivers_json: str
     input_hash: str
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=utc_now)
 
 class DecisionLog(SQLModel, table=True):
     __tablename__ = "decision_log"
@@ -127,7 +130,7 @@ class DecisionLog(SQLModel, table=True):
     action: str  # accept, override, verify
     committed_t: float
     reason: Optional[str] = None
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=utc_now)
 
 class AuditEvent(SQLModel, table=True):
     __tablename__ = "audit_event"
@@ -136,4 +139,4 @@ class AuditEvent(SQLModel, table=True):
     entity_id: str
     event: str
     payload_json: str
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=utc_now)

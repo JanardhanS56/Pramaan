@@ -1,0 +1,2 @@
+contract_id,buyer_name,crop,grade,quantity_t,due_date,penalty_per_t,status
+CTR-2024-01,AgroCorp,onion,A,100.0,2024-11-15,1500.0,OPEN
