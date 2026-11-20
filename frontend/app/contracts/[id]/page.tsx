@@ -9,7 +9,6 @@ import {
   AlertTriangle,
   XCircle,
   ShieldAlert,
-  Info,
   Copy,
   Check,
 } from "lucide-react";
@@ -58,9 +57,7 @@ export default function ReadinessCardPage() {
     setConfidence(newConf);
     try {
       setLoading(true);
-      // Generate suggestion at new confidence level
       await generateSuggestions(newConf);
-      // Reload card list or latest
       await loadCard(newConf);
     } catch (e: any) {
       // If generate fails, keep current
@@ -115,18 +112,18 @@ export default function ReadinessCardPage() {
 
   if (loading && !card) {
     return (
-      <div className="py-20 text-center text-slate-400">
-        <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-500 mb-3" />
-        <p>Loading Commitment Readiness Card...</p>
+      <div className="py-20 text-center text-[#5A635E]">
+        <div className="inline-block animate-spin rounded-full h-7 w-7 border-b-2 border-[#1F4E35] mb-3" />
+        <p className="text-xs font-medium">Loading Commitment Readiness Card...</p>
       </div>
     );
   }
 
   if (!card) {
     return (
-      <div className="py-20 text-center text-slate-400">
-        <p>Suggestion card not found.</p>
-        <Link href="/" className="mt-4 inline-block text-emerald-400 font-semibold hover:underline">
+      <div className="py-20 text-center text-[#5A635E]">
+        <p className="text-sm">Suggestion card not found.</p>
+        <Link href="/" className="mt-3 inline-block text-[#1F4E35] font-semibold hover:underline text-xs">
           Return to Dashboard
         </Link>
       </div>
@@ -138,10 +135,10 @@ export default function ReadinessCardPage() {
   const isRed = card.status === "RED";
 
   const statusColor = isGreen
-    ? "bg-emerald-950/40 border-emerald-600 text-emerald-300"
+    ? "bg-[#EAF2ED] border-[#C5D8CC] text-[#1F4E35]"
     : isAmber
-    ? "bg-amber-950/40 border-amber-600 text-amber-300"
-    : "bg-red-950/40 border-red-600 text-red-300";
+    ? "bg-[#FFFAEB] border-[#FEDF89] text-[#B54708]"
+    : "bg-[#FEF3F2] border-[#FECDCA] text-[#B42318]";
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
@@ -149,23 +146,23 @@ export default function ReadinessCardPage() {
       <div>
         <Link
           href="/"
-          className="inline-flex items-center space-x-1.5 text-xs font-semibold text-slate-400 hover:text-white transition-colors"
+          className="inline-flex items-center space-x-1.5 text-xs font-semibold text-[#5A635E] hover:text-[#1C201E] transition-colors"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to Open Contracts</span>
         </Link>
       </div>
 
       {/* Main Readiness Card Container */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+      <div className="bg-white border border-[#DCE1DD] rounded-md overflow-hidden">
         {/* Header Block */}
-        <div className="p-6 sm:p-8 border-b border-slate-800">
+        <div className="p-6 border-b border-[#DCE1DD]">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
-              <div className="flex items-center space-x-2 text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
+              <div className="flex items-center space-x-2 text-xs font-mono tabular-nums font-semibold uppercase tracking-wider text-[#5A635E]">
                 <span>CONTRACT {card.contract_id}</span>
                 <span>•</span>
-                <span className="capitalize text-slate-300">{card.crop}</span>
+                <span className="capitalize">{card.crop}</span>
                 <span>•</span>
                 <span>GRADE {card.grade || "A"}</span>
                 {card.due_date && (
@@ -175,31 +172,36 @@ export default function ReadinessCardPage() {
                   </>
                 )}
               </div>
-              <h1 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
-                Buyer requires: <span className="text-white">{card.buyer_requires_t || card.contract_quantity_t} t</span>
+              <h1 className="text-2xl font-bold text-[#1C201E] mt-1">
+                Buyer requires:{" "}
+                <span className="font-mono tabular-nums">
+                  {card.buyer_requires_t || card.contract_quantity_t} t
+                </span>
               </h1>
-              <p className="text-xs text-slate-400 mt-1">Buyer: {card.buyer_name || "Commercial Buyer"}</p>
+              <p className="text-xs text-[#5A635E] mt-0.5">
+                Buyer: {card.buyer_name || "Commercial Buyer"}
+              </p>
             </div>
 
             {/* Confidence Level Selector */}
-            <div className="bg-slate-950 p-1 rounded-xl border border-slate-800 flex items-center space-x-1">
-              <span className="text-[11px] font-semibold text-slate-400 px-2">Confidence:</span>
+            <div className="bg-[#F0F2F0] p-0.5 rounded border border-[#DCE1DD] flex items-center space-x-1">
+              <span className="text-[11px] font-semibold text-[#5A635E] px-2">Confidence:</span>
               <button
                 onClick={() => handleConfidenceChange(0.80)}
-                className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
+                className={`px-2.5 py-1 rounded text-xs font-bold transition-all ${
                   confidence === 0.80
-                    ? "bg-emerald-600 text-white shadow-sm"
-                    : "text-slate-400 hover:text-white"
+                    ? "bg-[#1F4E35] text-white"
+                    : "text-[#5A635E] hover:text-[#1C201E]"
                 }`}
               >
                 80%
               </button>
               <button
                 onClick={() => handleConfidenceChange(0.90)}
-                className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
+                className={`px-2.5 py-1 rounded text-xs font-bold transition-all ${
                   confidence === 0.90
-                    ? "bg-emerald-600 text-white shadow-sm"
-                    : "text-slate-400 hover:text-white"
+                    ? "bg-[#1F4E35] text-white"
+                    : "text-[#5A635E] hover:text-[#1C201E]"
                 }`}
               >
                 90%
@@ -211,33 +213,33 @@ export default function ReadinessCardPage() {
         {/* Feedback Alert */}
         {feedback && (
           <div
-            className={`mx-6 mt-6 p-4 rounded-xl text-sm flex items-center space-x-3 border ${
+            className={`mx-6 mt-6 p-3.5 rounded text-xs flex items-center space-x-2.5 border ${
               feedback.type === "success"
-                ? "bg-emerald-950/40 border-emerald-700 text-emerald-200"
-                : "bg-red-950/40 border-red-700 text-red-200"
+                ? "bg-[#EAF2ED] border-[#C5D8CC] text-[#1F4E35]"
+                : "bg-[#FEF3F2] border-[#FECDCA] text-[#B42318]"
             }`}
           >
             {feedback.type === "success" ? (
-              <CheckCircle2 className="w-5 h-5 flex-shrink-0 text-emerald-400" />
+              <CheckCircle2 className="w-4 h-4 flex-shrink-0 text-[#1F4E35]" />
             ) : (
-              <XCircle className="w-5 h-5 flex-shrink-0 text-red-400" />
+              <XCircle className="w-4 h-4 flex-shrink-0 text-[#B42318]" />
             )}
             <span>{feedback.text}</span>
           </div>
         )}
 
         {/* Status Banner */}
-        <div className="p-6 sm:p-8 space-y-6">
-          <div className={`p-5 rounded-xl border ${statusColor} flex items-start space-x-4 shadow-inner`}>
-            {isGreen && <CheckCircle2 className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />}
-            {isAmber && <AlertTriangle className="w-6 h-6 text-amber-400 flex-shrink-0 mt-0.5" />}
-            {isRed && <XCircle className="w-6 h-6 text-red-400 flex-shrink-0 mt-0.5" />}
+        <div className="p-6 space-y-6">
+          <div className={`p-4 rounded border ${statusColor} flex items-start space-x-3`}>
+            {isGreen && <CheckCircle2 className="w-5 h-5 text-[#1F4E35] flex-shrink-0 mt-0.5" />}
+            {isAmber && <AlertTriangle className="w-5 h-5 text-[#B54708] flex-shrink-0 mt-0.5" />}
+            {isRed && <XCircle className="w-5 h-5 text-[#B42318] flex-shrink-0 mt-0.5" />}
             <div>
-              <div className="font-extrabold text-base sm:text-lg flex items-center space-x-2">
+              <div className="font-bold text-sm sm:text-base flex items-center space-x-2">
                 <span>
-                  {isGreen && "🟢 GREEN — Safe to commit full contract."}
-                  {isAmber && `🟡 AMBER — Commit ${card.recommended_commitment_t || card.recommended_t} t now.`}
-                  {isRed && `🔴 RED — Do not commit ${card.buyer_requires_t || card.contract_quantity_t} t.`}
+                  {isGreen && "GREEN — Safe to commit full contract."}
+                  {isAmber && `AMBER — Commit ${(card.recommended_commitment_t || card.recommended_t).toFixed(0)} t now.`}
+                  {isRed && `RED — Do not commit ${card.buyer_requires_t || card.contract_quantity_t} t.`}
                 </span>
               </div>
               <p className="text-xs sm:text-sm mt-1 opacity-90 leading-relaxed">{card.message}</p>
@@ -246,10 +248,10 @@ export default function ReadinessCardPage() {
 
           {/* Thin data warning banner if applicable */}
           {card.low_information && (
-            <div className="p-4 rounded-xl bg-amber-950/20 border border-amber-800/60 text-xs text-amber-300 flex items-center space-x-3">
-              <ShieldAlert className="w-5 h-5 flex-shrink-0 text-amber-400" />
+            <div className="p-3.5 rounded bg-[#FFFAEB] border border-[#FEDF89] text-xs text-[#B54708] flex items-center space-x-2.5">
+              <ShieldAlert className="w-4 h-4 flex-shrink-0 text-[#B54708]" />
               <span>
-                Caution: Interval is wide due to thin historical calibration data. Status has been automatically
+                Caution: Calibrated interval is wide due to thin historical calibration data. Status has been automatically
                 downgraded for risk protection.
               </span>
             </div>
@@ -267,95 +269,95 @@ export default function ReadinessCardPage() {
 
           {/* Key Metrics Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="bg-slate-950/60 p-4 rounded-xl border border-slate-800">
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">
+            <div className="bg-white p-4 rounded-md border border-[#DCE1DD]">
+              <span className="text-xs font-semibold text-[#5A635E] uppercase tracking-wider block mb-1">
                 Point Estimate
               </span>
-              <span className="text-2xl font-mono font-extrabold text-white">
+              <span className="text-2xl font-mono tabular-nums font-bold text-[#1C201E]">
                 {(card.point_estimate_t || card.point_t).toFixed(1)} t
               </span>
-              <span className="text-[11px] text-slate-500 block mt-1">Expected mean harvest</span>
+              <span className="text-[11px] text-[#5A635E] block mt-1">Expected mean harvest</span>
             </div>
 
-            <div className="bg-slate-950/60 p-4 rounded-xl border border-slate-800">
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">
+            <div className="bg-white p-4 rounded-md border border-[#DCE1DD]">
+              <span className="text-xs font-semibold text-[#5A635E] uppercase tracking-wider block mb-1">
                 Shortfall Risk at {card.buyer_requires_t || card.contract_quantity_t} t
               </span>
-              <span className={`text-2xl font-mono font-extrabold ${card.shortfall_risk > 0.5 ? "text-amber-400" : "text-emerald-400"}`}>
+              <span className="text-2xl font-mono tabular-nums font-bold text-[#B54708]">
                 {(card.shortfall_risk * 100).toFixed(0)}%
               </span>
-              <span className="text-[11px] text-slate-500 block mt-1">Empirical predictive CDF</span>
+              <span className="text-[11px] text-[#5A635E] block mt-1">Empirical predictive CDF</span>
             </div>
 
-            <div className="bg-emerald-950/30 p-4 rounded-xl border border-emerald-800/80">
-              <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider block mb-1">
+            <div className="bg-[#EAF2ED]/60 p-4 rounded-md border border-[#C5D8CC]">
+              <span className="text-xs font-bold text-[#1F4E35] uppercase tracking-wider block mb-1">
                 Recommended Commitment
               </span>
-              <span className="text-3xl font-mono font-extrabold text-emerald-300">
+              <span className="text-2xl font-mono tabular-nums font-bold text-[#1F4E35]">
                 {(card.recommended_commitment_t || card.recommended_t).toFixed(0)} t
               </span>
-              <span className="text-[11px] text-emerald-400/80 block mt-1">
+              <span className="text-[11px] text-[#1F4E35]/80 block mt-1">
                 Pessimistic calibrated floor
               </span>
             </div>
           </div>
 
           {/* Explanatory Drivers */}
-          <div className="bg-slate-950/40 p-5 rounded-xl border border-slate-800">
-            <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">
+          <div className="bg-[#F9FAF8] p-4 rounded-md border border-[#DCE1DD]">
+            <h3 className="text-xs font-bold text-[#1C201E] uppercase tracking-wider mb-2.5">
               Why (Top Empirical Drivers):
             </h3>
-            <ul className="space-y-2 text-sm text-slate-300">
+            <ul className="space-y-1.5 text-xs text-[#1C201E]">
               {card.drivers && card.drivers.length > 0 ? (
                 card.drivers.map((d, idx) => (
-                  <li key={idx} className="flex items-start space-x-2.5">
-                    <span className="text-slate-500 font-bold">•</span>
+                  <li key={idx} className="flex items-start space-x-2">
+                    <span className="text-[#5A635E] font-bold">•</span>
                     <span>{d.label}</span>
                   </li>
                 ))
               ) : (
-                <li className="text-slate-500 text-xs">Standard historical yield and member performance metrics apply.</li>
+                <li className="text-[#5A635E] text-xs">Standard historical yield and member performance metrics apply.</li>
               )}
             </ul>
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-800">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-[#DCE1DD]">
             <button
               onClick={handleVerifyCommit}
               disabled={actionLoading}
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-800 text-white font-bold text-sm transition-all shadow-lg flex items-center justify-center space-x-2"
+              className="w-full sm:w-auto px-5 py-2.5 rounded bg-[#1F4E35] hover:bg-[#163A27] disabled:bg-[#DCE1DD] text-white font-semibold text-xs transition-colors flex items-center justify-center space-x-2"
             >
-              <CheckCircle2 className="w-4 h-4" />
+              <CheckCircle2 className="w-3.5 h-3.5" />
               <span>Verify stock & commit {(card.recommended_commitment_t || card.recommended_t).toFixed(0)} t</span>
             </button>
 
             <button
               onClick={() => setShowOverride(true)}
               disabled={actionLoading}
-              className="w-full sm:w-auto px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-400 hover:text-amber-300 border border-slate-700 font-semibold text-sm transition-all flex items-center justify-center space-x-2"
+              className="w-full sm:w-auto px-4 py-2.5 rounded bg-white hover:bg-[#FFFAEB] text-[#B54708] border border-[#FEDF89] font-semibold text-xs transition-colors flex items-center justify-center space-x-2"
             >
-              <AlertTriangle className="w-4 h-4 text-amber-400" />
+              <AlertTriangle className="w-3.5 h-3.5 text-[#B54708]" />
               <span>Override → board</span>
             </button>
           </div>
         </div>
 
         {/* Footer Meta Strip */}
-        <div className="bg-slate-950 px-6 py-4 border-t border-slate-800 text-xs text-slate-400 flex flex-wrap items-center justify-between gap-3 font-mono">
+        <div className="bg-[#F0F2F0] px-6 py-3 border-t border-[#DCE1DD] text-xs text-[#5A635E] flex flex-wrap items-center justify-between gap-3 font-mono tabular-nums">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <span>Model: <strong className="text-slate-300">{card.model_version}</strong></span>
-            <span>Calibration: <strong className="text-slate-300">{card.calibration_version}</strong></span>
+            <span>Model: <strong className="text-[#1C201E]">{card.model_version}</strong></span>
+            <span>Calibration: <strong className="text-[#1C201E]">{card.calibration_version}</strong></span>
             <span>n={card.calibration_size || card.calib_size}</span>
-            <span>Backtest coverage: <strong className="text-emerald-400">{(card.backtest_coverage || 0.81).toFixed(2)}</strong></span>
+            <span>Backtest cov: <strong className="text-[#1F4E35]">{(card.backtest_coverage || 0.81).toFixed(2)}</strong></span>
           </div>
 
           <button
             onClick={copyInputHash}
-            className="flex items-center space-x-1.5 text-slate-500 hover:text-slate-300 transition-colors"
+            className="flex items-center space-x-1.5 text-[#5A635E] hover:text-[#1C201E] transition-colors"
             title="SHA-256 Input Hash"
           >
-            {copiedHash ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+            {copiedHash ? <Check className="w-3.5 h-3.5 text-[#1F4E35]" /> : <Copy className="w-3.5 h-3.5" />}
             <span>Hash: {card.input_hash.substring(0, 10)}...</span>
           </button>
         </div>

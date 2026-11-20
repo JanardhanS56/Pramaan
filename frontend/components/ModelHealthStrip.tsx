@@ -32,20 +32,22 @@ export function ModelHealthStrip() {
   }, []);
 
   return (
-    <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 my-6 text-white">
-      <div className="flex flex-wrap items-center justify-between gap-4 mb-3 border-b border-slate-800 pb-3">
+    <div className="bg-white border border-[#DCE1DD] rounded-md p-4 my-6">
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-3 border-b border-[#DCE1DD] pb-3">
         <div className="flex items-center space-x-2">
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+          <span className="text-xs font-semibold uppercase tracking-wider text-[#5A635E]">
             Model Health & Backtest Coverage Gates
           </span>
-          <span className="text-[11px] text-slate-500 font-mono">(Held-out 2024-RB Evaluation)</span>
+          <span className="text-[11px] text-[#5A635E] font-mono tabular-nums">
+            (Held-out 2024-RB Evaluation)
+          </span>
         </div>
         <button
           onClick={loadHealth}
           disabled={loading}
-          className="text-xs text-slate-400 hover:text-white flex items-center space-x-1 transition-colors"
+          className="text-xs font-medium text-[#5A635E] hover:text-[#1C201E] bg-[#F9FAF8] hover:bg-white border border-[#DCE1DD] rounded px-2.5 py-1 flex items-center space-x-1.5 transition-colors"
         >
-          <RefreshCw className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`} />
+          <RefreshCw className={`w-3 h-3 ${loading ? "animate-spin text-[#1F4E35]" : ""}`} />
           <span>Refresh Gates</span>
         </button>
       </div>
@@ -60,45 +62,53 @@ export function ModelHealthStrip() {
           return (
             <div
               key={crop}
-              className={`p-3 rounded-lg border flex items-center justify-between ${
+              className={`p-3 rounded-md border flex items-center justify-between transition-colors ${
                 r
                   ? isOpen
-                    ? "bg-emerald-950/20 border-emerald-800/60"
-                    : "bg-red-950/20 border-red-800/60"
-                  : "bg-slate-950/40 border-slate-800 text-slate-500"
+                    ? "bg-[#EAF2ED]/50 border-[#C5D8CC]"
+                    : "bg-[#FEF3F2] border-[#FECDCA]"
+                  : "bg-[#F0F2F0] border-[#DCE1DD] text-[#5A635E]"
               }`}
             >
               <div>
                 <div className="flex items-center space-x-1.5">
-                  <span className="capitalize font-bold text-sm text-slate-200">{crop}</span>
+                  <span className="capitalize font-semibold text-xs text-[#1C201E]">{crop}</span>
                   {r ? (
                     <span
-                      className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
-                        isOpen ? "bg-emerald-900 text-emerald-300" : "bg-red-900 text-red-300"
+                      className={`text-[10px] font-bold px-1.5 py-0.5 rounded font-mono ${
+                        isOpen
+                          ? "bg-[#1F4E35] text-white"
+                          : "bg-[#B42318] text-white"
                       }`}
                     >
                       GATE {r.gate_status}
                     </span>
                   ) : (
-                    <span className="text-[10px] bg-slate-800 px-1.5 py-0.5 rounded text-slate-400">UNINITIALIZED</span>
+                    <span className="text-[10px] bg-[#DCE1DD] px-1.5 py-0.5 rounded text-[#5A635E] font-medium font-mono">
+                      UNINITIALIZED
+                    </span>
                   )}
                 </div>
-                <div className="text-xs text-slate-400 mt-1">
+                <div className="text-xs text-[#5A635E] mt-1">
                   {r ? (
                     <span>
-                      Cov @0.80: <strong className="text-white">{(cov80! * 100).toFixed(0)}%</strong> (n={calibN})
+                      Cov @0.80:{" "}
+                      <strong className={`font-mono tabular-nums font-bold ${isOpen ? "text-[#1F4E35]" : "text-[#B42318]"}`}>
+                        {(cov80! * 100).toFixed(0)}%
+                      </strong>{" "}
+                      <span className="font-mono tabular-nums text-[11px]">(n={calibN})</span>
                     </span>
                   ) : (
-                    <span>No backtest run recorded</span>
+                    <span className="text-[11px]">No backtest run recorded</span>
                   )}
                 </div>
               </div>
 
               {r ? (
                 isOpen ? (
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                  <CheckCircle2 className="w-4 h-4 text-[#1F4E35] flex-shrink-0" />
                 ) : (
-                  <XCircle className="w-5 h-5 text-red-400" />
+                  <XCircle className="w-4 h-4 text-[#B42318] flex-shrink-0" />
                 )
               ) : null}
             </div>

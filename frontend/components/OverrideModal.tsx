@@ -55,46 +55,56 @@ export function OverrideModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-      <div className="bg-slate-900 border border-amber-600/60 rounded-2xl max-w-lg w-full p-6 text-white shadow-2xl animate-in fade-in zoom-in-95">
-        <div className="flex justify-between items-start pb-4 border-b border-slate-800">
-          <div className="flex items-center space-x-2 text-amber-400">
-            <AlertTriangle className="w-5 h-5 flex-shrink-0" />
-            <h3 className="font-bold text-lg">Board Override — {contractId}</h3>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+      <div className="bg-white border border-[#DCE1DD] rounded-md max-w-lg w-full p-6 text-[#1C201E] shadow-xl">
+        <div className="flex justify-between items-start pb-3 border-b border-[#DCE1DD]">
+          <div className="flex items-center space-x-2 text-[#B54708]">
+            <AlertTriangle className="w-4 h-4 flex-shrink-0" />
+            <h3 className="font-semibold text-sm text-[#1C201E]">
+              Board Override — <span className="font-mono tabular-nums">{contractId}</span>
+            </h3>
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-white transition-colors">
-            <X className="w-5 h-5" />
+          <button
+            onClick={onClose}
+            className="text-[#5A635E] hover:text-[#1C201E] transition-colors"
+          >
+            <X className="w-4 h-4" />
           </button>
         </div>
 
-        <div className="my-4 p-4 rounded-xl bg-amber-950/30 border border-amber-800/60 text-xs space-y-2">
-          <p className="text-amber-300 font-semibold">
-            Liability Warning: You are overriding an engine recommendation.
+        <div className="my-4 p-3.5 rounded bg-[#FFFAEB] border border-[#FEDF89] text-xs space-y-1.5">
+          <p className="text-[#B54708] font-semibold">
+            Liability Warning: You are overriding the engine&apos;s empirical recommendation.
           </p>
-          <p className="text-slate-300">
-            • Recommended commitment: <span className="font-bold text-white">{recommendedT} t</span>
+          <p className="text-[#1C201E]">
+            • Recommended commitment:{" "}
+            <span className="font-mono tabular-nums font-semibold">{recommendedT} t</span>
           </p>
-          <p className="text-slate-300">
-            • Requested commitment: <span className="font-bold text-white">{requestedT} t</span>
+          <p className="text-[#1C201E]">
+            • Requested commitment:{" "}
+            <span className="font-mono tabular-nums font-semibold">{requestedT} t</span>
           </p>
-          <p className="text-slate-300">
-            • Stated shortfall risk: <span className="font-bold text-amber-400">{(shortfallRisk * 100).toFixed(0)}%</span>
+          <p className="text-[#1C201E]">
+            • Stated shortfall risk:{" "}
+            <span className="font-mono tabular-nums font-semibold text-[#B54708]">
+              {(shortfallRisk * 100).toFixed(0)}%
+            </span>
           </p>
-          <p className="text-slate-400 text-[11px] pt-1">
-            This action is permanently recorded in the append-only audit trail with actor name, timestamp, and SHA-256 state hash.
+          <p className="text-[#5A635E] text-[11px] pt-1.5 border-t border-[#FEDF89]">
+            This action is permanently recorded in the append-only audit trail with actor identity, timestamp, and SHA-256 state hash.
           </p>
         </div>
 
         {error && (
-          <div className="mb-4 p-3 bg-red-950/60 border border-red-700/80 rounded-lg text-xs text-red-200">
+          <div className="mb-4 p-3 bg-[#FEF3F2] border border-[#FECDCA] rounded text-xs text-[#B42318]">
             {error}
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1">
-              Actor / Authorized Board Member <span className="text-amber-400">*</span>
+            <label className="block text-xs font-semibold text-[#1C201E] mb-1">
+              Actor / Authorized Board Member <span className="text-[#B54708]">*</span>
             </label>
             <input
               type="text"
@@ -102,13 +112,13 @@ export function OverrideModal({
               placeholder="e.g. board_chairperson, director_ops"
               value={actor}
               onChange={(e) => setActor(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500"
+              className="w-full bg-white border border-[#DCE1DD] rounded px-3 py-2 text-xs text-[#1C201E] focus:outline-none focus:border-[#1F4E35]"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1">
-              Mandatory Override Reason <span className="text-amber-400">*</span>
+            <label className="block text-xs font-semibold text-[#1C201E] mb-1">
+              Mandatory Override Reason <span className="text-[#B54708]">*</span>
             </label>
             <textarea
               required
@@ -116,23 +126,23 @@ export function OverrideModal({
               placeholder="State explicit justification (e.g. verified 25t buffer stock in local cold storage warehouse; board resolution #42)."
               value={reason}
               onChange={(e) => setReason(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500"
+              className="w-full bg-white border border-[#DCE1DD] rounded px-3 py-2 text-xs text-[#1C201E] focus:outline-none focus:border-[#1F4E35]"
             />
           </div>
 
-          <div className="flex justify-end space-x-3 pt-3 border-t border-slate-800">
+          <div className="flex justify-end space-x-2.5 pt-3 border-t border-[#DCE1DD]">
             <button
               type="button"
               onClick={onClose}
               disabled={loading}
-              className="px-4 py-2 text-xs font-medium text-slate-300 hover:text-white bg-slate-800 rounded-lg transition-colors"
+              className="px-4 py-2 text-xs font-medium text-[#1C201E] bg-[#F0F2F0] hover:bg-[#E2E6E2] border border-[#DCE1DD] rounded transition-colors"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={loading}
-              className="px-4 py-2 text-xs font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors flex items-center space-x-1.5"
+              className="px-4 py-2 text-xs font-semibold text-white bg-[#B54708] hover:bg-[#93370D] rounded transition-colors flex items-center space-x-1.5"
             >
               {loading ? "Recording..." : "Record Board Override"}
             </button>

@@ -45,13 +45,32 @@ export default function DashboardPage() {
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "GREEN":
-        return <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-950 text-emerald-400 border border-emerald-800">🟢 GREEN</span>;
+        return (
+          <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-[#EAF2ED] text-[#1F4E35] border border-[#C5D8CC] inline-flex items-center space-x-1">
+            <span>●</span>
+            <span>GREEN</span>
+          </span>
+        );
       case "AMBER":
-        return <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-950 text-amber-300 border border-amber-800">🟡 AMBER</span>;
+        return (
+          <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-[#FFFAEB] text-[#B54708] border border-[#FEDF89] inline-flex items-center space-x-1">
+            <span>●</span>
+            <span>AMBER</span>
+          </span>
+        );
       case "RED":
-        return <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-red-950 text-red-400 border border-red-800">🔴 RED</span>;
+        return (
+          <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-[#FEF3F2] text-[#B42318] border border-[#FECDCA] inline-flex items-center space-x-1">
+            <span>●</span>
+            <span>RED</span>
+          </span>
+        );
       default:
-        return <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-slate-800 text-slate-400">PENDING</span>;
+        return (
+          <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-[#F0F2F0] text-[#5A635E] border border-[#DCE1DD]">
+            PENDING
+          </span>
+        );
     }
   };
 
@@ -60,10 +79,10 @@ export default function DashboardPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+          <h1 className="text-2xl font-bold tracking-tight text-[#1C201E]">
             Commitment Dashboard
           </h1>
-          <p className="text-sm text-slate-400 mt-1">
+          <p className="text-xs text-[#5A635E] mt-1">
             Empirical confidence intervals and rule-gated commitment readiness for open buyer contracts.
           </p>
         </div>
@@ -71,16 +90,16 @@ export default function DashboardPage() {
         <button
           onClick={handleGenerate}
           disabled={generating}
-          className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-800 text-white rounded-lg font-semibold text-sm transition-all shadow-lg flex items-center space-x-2"
+          className="px-3.5 py-2 bg-[#1F4E35] hover:bg-[#163A27] disabled:bg-[#DCE1DD] text-white rounded font-semibold text-xs transition-colors flex items-center space-x-2"
         >
-          <Sparkles className={`w-4 h-4 ${generating ? "animate-spin" : ""}`} />
+          <Sparkles className={`w-3.5 h-3.5 ${generating ? "animate-spin text-[#EAF2ED]" : ""}`} />
           <span>{generating ? "Evaluating Gates..." : "Generate Suggestions"}</span>
         </button>
       </div>
 
       {error && (
-        <div className="mb-6 p-4 bg-red-950/60 border border-red-800 rounded-xl text-sm text-red-200 flex items-center space-x-3">
-          <AlertCircle className="w-5 h-5 flex-shrink-0 text-red-400" />
+        <div className="mb-6 p-3 bg-[#FEF3F2] border border-[#FECDCA] rounded text-xs text-[#B42318] flex items-center space-x-2">
+          <AlertCircle className="w-4 h-4 flex-shrink-0 text-[#B42318]" />
           <span>{error}</span>
         </div>
       )}
@@ -89,66 +108,72 @@ export default function DashboardPage() {
       <ModelHealthStrip />
 
       {/* Contracts Table */}
-      <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-xl mt-6">
-        <div className="p-4 sm:p-5 border-b border-slate-800 flex justify-between items-center">
-          <h2 className="font-bold text-base text-white">Open Contracts & Readiness Cards</h2>
-          <span className="text-xs text-slate-400 font-mono">{suggestions.length} active suggestions</span>
+      <div className="bg-white border border-[#DCE1DD] rounded-md overflow-hidden mt-6">
+        <div className="p-4 border-b border-[#DCE1DD] flex justify-between items-center bg-white">
+          <h2 className="font-semibold text-xs uppercase tracking-wider text-[#1C201E]">
+            Open Contracts & Readiness Cards
+          </h2>
+          <span className="text-xs text-[#5A635E] font-mono tabular-nums bg-[#F0F2F0] border border-[#DCE1DD] px-2 py-0.5 rounded">
+            {suggestions.length} active suggestions
+          </span>
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm text-slate-300">
-            <thead className="bg-slate-950/60 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-800">
+          <table className="w-full text-left text-xs text-[#1C201E]">
+            <thead className="bg-[#EAF2ED]/60 text-[11px] font-semibold text-[#5A635E] uppercase tracking-wider border-b border-[#DCE1DD]">
               <tr>
-                <th className="py-3 px-4">Contract</th>
-                <th className="py-3 px-4">Buyer</th>
-                <th className="py-3 px-4">Crop & Grade</th>
-                <th className="py-3 px-4">Required Q</th>
-                <th className="py-3 px-4">Calibrated [L, U]</th>
-                <th className="py-3 px-4">Recommended</th>
-                <th className="py-3 px-4">Status</th>
-                <th className="py-3 px-4 text-right">Action</th>
+                <th className="py-2.5 px-4">Contract</th>
+                <th className="py-2.5 px-4">Buyer</th>
+                <th className="py-2.5 px-4">Crop & Grade</th>
+                <th className="py-2.5 px-4">Required Q</th>
+                <th className="py-2.5 px-4">Calibrated [L, U]</th>
+                <th className="py-2.5 px-4">Recommended</th>
+                <th className="py-2.5 px-4">Status</th>
+                <th className="py-2.5 px-4 text-right">Action</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800/60">
+            <tbody className="divide-y divide-[#DCE1DD]">
               {loading ? (
                 <tr>
-                  <td colSpan={8} className="py-12 text-center text-slate-500">
+                  <td colSpan={8} className="py-12 text-center text-[#5A635E]">
                     Loading contracts and calibrated suggestions...
                   </td>
                 </tr>
               ) : suggestions.length === 0 ? (
                 <tr>
-                  <td colSpan={8} className="py-12 text-center text-slate-400">
+                  <td colSpan={8} className="py-12 text-center text-[#5A635E]">
                     No active suggestions found. Click &quot;Generate Suggestions&quot; above to run the conformal pipeline.
                   </td>
                 </tr>
               ) : (
                 suggestions.map((s) => (
-                  <tr key={s.id} className="hover:bg-slate-800/40 transition-colors">
-                    <td className="py-3.5 px-4 font-mono font-bold text-slate-200">
+                  <tr key={s.id} className="hover:bg-[#EAF2ED]/25 transition-colors">
+                    <td className="py-3 px-4 font-mono tabular-nums font-semibold text-[#1C201E]">
                       {s.contract_id}
                     </td>
-                    <td className="py-3.5 px-4 text-slate-300">{s.buyer_name || "Commercial Buyer"}</td>
-                    <td className="py-3.5 px-4">
-                      <span className="capitalize font-semibold text-slate-200">{s.crop}</span>
-                      <span className="ml-1.5 text-xs font-mono text-slate-400 px-1.5 py-0.5 rounded bg-slate-800">
+                    <td className="py-3 px-4 text-[#1C201E]">
+                      {s.buyer_name || "Commercial Buyer"}
+                    </td>
+                    <td className="py-3 px-4">
+                      <span className="capitalize font-medium text-[#1C201E]">{s.crop}</span>
+                      <span className="ml-1.5 text-[11px] font-mono tabular-nums text-[#5A635E] px-1 py-0.5 rounded bg-[#F0F2F0] border border-[#DCE1DD]">
                         Grade {s.grade || "A"}
                       </span>
                     </td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-white">
+                    <td className="py-3 px-4 font-mono tabular-nums font-semibold text-[#1C201E]">
                       {s.buyer_requires_t || s.contract_quantity_t} t
                     </td>
-                    <td className="py-3.5 px-4 font-mono text-xs text-slate-300">
+                    <td className="py-3 px-4 font-mono tabular-nums text-xs text-[#5A635E]">
                       [{s.lower_t.toFixed(1)}t – {s.upper_t.toFixed(1)}t]
                     </td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-400">
+                    <td className="py-3 px-4 font-mono tabular-nums font-bold text-[#1F4E35]">
                       {s.recommended_commitment_t || s.recommended_t} t
                     </td>
-                    <td className="py-3.5 px-4">{getStatusBadge(s.status)}</td>
-                    <td className="py-3.5 px-4 text-right">
+                    <td className="py-3 px-4">{getStatusBadge(s.status)}</td>
+                    <td className="py-3 px-4 text-right">
                       <Link
                         href={`/contracts/${s.id}`}
-                        className="inline-flex items-center space-x-1 text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-400 hover:text-emerald-300 border border-slate-700 transition-colors"
+                        className="inline-flex items-center space-x-1 text-xs font-semibold px-2.5 py-1 rounded bg-white hover:bg-[#F0F2F0] text-[#1F4E35] border border-[#DCE1DD] transition-colors"
                       >
                         <span>View Card</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />

@@ -25,42 +25,42 @@ export default function ActualsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+        <h1 className="text-2xl font-bold tracking-tight text-[#1C201E]">
           Actuals & Calibration Ledger
         </h1>
-        <p className="text-sm text-slate-400 mt-1">
+        <p className="text-xs text-[#5A635E] mt-1">
           Record actual harvest yields and buyer deliveries. The conformal calibration ledger depends on honest actuals.
         </p>
       </div>
 
       {/* Entry Form */}
-      <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
-        <h2 className="text-base font-bold text-white mb-4 flex items-center space-x-2">
-          <Truck className="w-4 h-4 text-emerald-400" />
+      <div className="bg-white border border-[#DCE1DD] rounded-md p-6">
+        <h2 className="text-xs font-semibold uppercase tracking-wider text-[#1C201E] mb-4 flex items-center space-x-2">
+          <Truck className="w-3.5 h-3.5 text-[#1F4E35]" />
           <span>Record Delivery Outcome</span>
         </h2>
 
         {status && (
-          <div className="mb-4 p-4 rounded-xl bg-emerald-950/40 border border-emerald-800 text-emerald-200 text-sm flex items-center space-x-2">
-            <CheckCircle2 className="w-5 h-5 flex-shrink-0 text-emerald-400" />
+          <div className="mb-4 p-3.5 rounded bg-[#EAF2ED] border border-[#C5D8CC] text-[#1F4E35] text-xs flex items-center space-x-2">
+            <CheckCircle2 className="w-4 h-4 flex-shrink-0 text-[#1F4E35]" />
             <span>{status}</span>
           </div>
         )}
 
         <form onSubmit={handleRecordDelivery} className="grid grid-cols-1 sm:grid-cols-4 gap-4 items-end">
           <div>
-            <label className="block text-xs font-semibold text-slate-400 mb-1">Contract ID</label>
+            <label className="block text-xs font-semibold text-[#5A635E] mb-1">Contract ID</label>
             <input
               type="text"
               required
               value={contractId}
               onChange={(e) => setContractId(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 font-mono"
+              className="w-full bg-white border border-[#DCE1DD] rounded px-3 py-2 text-xs text-[#1C201E] focus:outline-none focus:border-[#1F4E35] font-mono tabular-nums"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-400 mb-1">Delivered Quantity (t)</label>
+            <label className="block text-xs font-semibold text-[#5A635E] mb-1">Delivered Quantity (t)</label>
             <input
               type="number"
               step="0.1"
@@ -68,16 +68,16 @@ export default function ActualsPage() {
               placeholder="e.g. 72.5"
               value={deliveredT}
               onChange={(e) => setDeliveredT(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 font-mono"
+              className="w-full bg-white border border-[#DCE1DD] rounded px-3 py-2 text-xs text-[#1C201E] focus:outline-none focus:border-[#1F4E35] font-mono tabular-nums"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-400 mb-1">Delivered Grade</label>
+            <label className="block text-xs font-semibold text-[#5A635E] mb-1">Delivered Grade</label>
             <select
               value={grade}
               onChange={(e) => setGrade(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500"
+              className="w-full bg-white border border-[#DCE1DD] rounded px-3 py-2 text-xs text-[#1C201E] focus:outline-none focus:border-[#1F4E35]"
             >
               <option value="A">Grade A</option>
               <option value="B">Grade B</option>
@@ -88,7 +88,7 @@ export default function ActualsPage() {
           <div>
             <button
               type="submit"
-              className="w-full px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold text-sm transition-colors shadow-md"
+              className="w-full px-4 py-2 bg-[#1F4E35] hover:bg-[#163A27] text-white rounded font-semibold text-xs transition-colors"
             >
               Log Delivery
             </button>
@@ -97,48 +97,52 @@ export default function ActualsPage() {
       </div>
 
       {/* Historical Ledger Table */}
-      <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-xl">
-        <div className="p-4 sm:p-5 border-b border-slate-800 flex justify-between items-center">
+      <div className="bg-white border border-[#DCE1DD] rounded-md overflow-hidden mt-6">
+        <div className="p-4 border-b border-[#DCE1DD] flex justify-between items-center bg-white">
           <div className="flex items-center space-x-2">
-            <Scale className="w-4 h-4 text-emerald-400" />
-            <h2 className="font-bold text-base text-white">Historical Delivery Ledger (Residual Ground Truth)</h2>
+            <Scale className="w-3.5 h-3.5 text-[#1F4E35]" />
+            <h2 className="font-semibold text-xs uppercase tracking-wider text-[#1C201E]">
+              Historical Delivery Ledger (Residual Ground Truth)
+            </h2>
           </div>
-          <span className="text-xs text-slate-400 font-mono">4 completed contracts</span>
+          <span className="text-xs text-[#5A635E] font-mono tabular-nums bg-[#F0F2F0] border border-[#DCE1DD] px-2 py-0.5 rounded">
+            4 completed contracts
+          </span>
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm text-slate-300">
-            <thead className="bg-slate-950/60 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-800">
+          <table className="w-full text-left text-xs text-[#1C201E]">
+            <thead className="bg-[#EAF2ED]/60 text-[11px] font-semibold text-[#5A635E] uppercase tracking-wider border-b border-[#DCE1DD]">
               <tr>
-                <th className="py-3 px-4">Contract</th>
-                <th className="py-3 px-4">Buyer</th>
-                <th className="py-3 px-4">Crop</th>
-                <th className="py-3 px-4">Required</th>
-                <th className="py-3 px-4">Delivered</th>
-                <th className="py-3 px-4">Shortfall</th>
-                <th className="py-3 px-4">Outcome</th>
+                <th className="py-2.5 px-4">Contract</th>
+                <th className="py-2.5 px-4">Buyer</th>
+                <th className="py-2.5 px-4">Crop</th>
+                <th className="py-2.5 px-4">Required</th>
+                <th className="py-2.5 px-4">Delivered</th>
+                <th className="py-2.5 px-4">Shortfall</th>
+                <th className="py-2.5 px-4">Outcome</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800/60 font-mono text-xs">
+            <tbody className="divide-y divide-[#DCE1DD] font-mono tabular-nums text-xs">
               {pastDeliveries.map((d) => (
-                <tr key={d.id} className="hover:bg-slate-800/40 transition-colors">
-                  <td className="py-3 px-4 font-bold text-slate-200">{d.id}</td>
-                  <td className="py-3 px-4 font-sans text-slate-300">{d.buyer}</td>
+                <tr key={d.id} className="hover:bg-[#EAF2ED]/25 transition-colors">
+                  <td className="py-3 px-4 font-semibold text-[#1C201E]">{d.id}</td>
+                  <td className="py-3 px-4 font-sans text-[#1C201E]">{d.buyer}</td>
                   <td className="py-3 px-4 capitalize font-sans">{d.crop}</td>
                   <td className="py-3 px-4">{d.req.toFixed(1)} t</td>
-                  <td className="py-3 px-4 font-bold text-white">{d.delivered.toFixed(1)} t</td>
-                  <td className={`py-3 px-4 font-bold ${d.shortfall > 0 ? "text-red-400" : "text-slate-400"}`}>
+                  <td className="py-3 px-4 font-bold text-[#1C201E]">{d.delivered.toFixed(1)} t</td>
+                  <td className={`py-3 px-4 font-bold ${d.shortfall > 0 ? "text-[#B42318]" : "text-[#5A635E]"}`}>
                     {d.shortfall > 0 ? `${d.shortfall.toFixed(1)} t` : "0.0 t"}
                   </td>
                   <td className="py-3 px-4 font-sans">
                     {d.shortfall > 0 ? (
-                      <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-red-950 text-red-300 border border-red-800 flex items-center space-x-1 w-fit">
-                        <AlertTriangle className="w-3 h-3" />
+                      <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-[#FEF3F2] text-[#B42318] border border-[#FECDCA] inline-flex items-center space-x-1">
+                        <AlertTriangle className="w-3 h-3 text-[#B42318]" />
                         <span>{d.status}</span>
                       </span>
                     ) : (
-                      <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-950 text-emerald-300 border border-emerald-800 flex items-center space-x-1 w-fit">
-                        <CheckCircle2 className="w-3 h-3" />
+                      <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-[#EAF2ED] text-[#1F4E35] border border-[#C5D8CC] inline-flex items-center space-x-1">
+                        <CheckCircle2 className="w-3 h-3 text-[#1F4E35]" />
                         <span>{d.status}</span>
                       </span>
                     )}
