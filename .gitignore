@@ -11,3 +11,4 @@ node_modules/
 out/
 .env
 .env.local
+artifacts/*.joblib

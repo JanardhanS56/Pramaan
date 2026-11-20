@@ -12,6 +12,8 @@ class Settings(BaseSettings):
     MIN_CALIBRATION_SIZE: int = 30
     MIN_TRAIN_ROWS: int = 60
     LOW_INFORMATION_RATIO: float = 1.5
+    AMBER_MIN_LOWER_RATIO: float = 0.70
+    AMBER_MIN_UPPER_RATIO: float = 0.75
     DATABASE_URL: str = "sqlite:///./setu.db"
 
 settings = Settings()
