@@ -3,13 +3,13 @@
 <!-- AGENT: Read only CURRENT STATE + last 3 HISTORY entries on chat start. -->
 
 ## CURRENT STATE
-_Last updated: 2026-11-20T17:36:00Z · HEAD: 15ae9b8_
-- **Phase:** Vercel Production Deployment & Serverless Fallback complete · v1.0
+_Last updated: 2026-11-20T17:45:00Z · HEAD: a1229dc_
+- **Phase:** Suggestion ID Resolution Fix & Vercel Readiness complete · v1.0
 - **Completed phases:** Phase 0, Phase 1, Phase 2, Phase 3, Phase 4, Phase 5, Phase 6, Phase 7
-- **Next task:** None — Vercel deployment configured; root vercel.json, package.json, and Next.js serverless API routes active.
+- **Next task:** None — Suggestions now resolve by both contract_id (e.g. CTR-2025-07) and suggestion_id.
 - **Tests:** 43 passing / 0 failing · core coverage: 100% · UI: Next.js build 12/12 pages & API routes green
 - **Backtest gate:** onion: OPEN (empirical coverage 0.85 @ 0.80 nominal [PASS]), tomato: OPEN (empirical coverage 0.82 @ 0.80 nominal [PASS])
-- **Files hot right now:** vercel.json, package.json, frontend/lib/api.ts, frontend/app/api/
+- **Files hot right now:** backend/app/api/suggestions.py, frontend/app/page.tsx
 - **Known issues / blockers:** none
 - **Open questions for the user:** none
 
