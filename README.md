@@ -1,8 +1,4 @@
 # Setu v1.0 "Pramaan" — Commitment Confidence Engine for FPOs
-
-> **Tech4Bharat GAVS Hackathon 2026**  
-> **Theme:** Agriculture and Food Processing  
-> **Problem Statement 6.4:** *Food processors cannot rely on agricultural supply forecasts...*  
 >
 > **"We don't predict the harvest. We tell the FPO how much it is allowed to promise — with a confidence level that is empirically proven, not asserted."**
 
@@ -14,7 +10,7 @@
 
 ---
 
-### ⚡ Quick Evaluation & 60-Second Demo
+### For quick Demo
 ```bash
 # Clone and run the full end-to-end pipeline in under 2 minutes:
 bash scripts/demo.sh          # On Linux / macOS / Git Bash
@@ -24,9 +20,9 @@ bash scripts/demo.sh          # On Linux / macOS / Git Bash
 
 ---
 
-## 🎯 Direct Alignment with Hackathon Problem Statement 6.4
+## Direct Alignment
 
-| Judge Evaluation Dimension | How Setu Solves Problem Statement 6.4 |
+| Evaluation Dimension | How Setu Solves |
 | :--- | :--- |
 | **The Core Sourcing Breakdown** | Food processors face erratic processing schedules and 2× mandi spot-market costs because FPOs cannot guarantee harvest delivery dates and volumes signed at sowing time. |
 | **The Traditional AI Defect** | Standard yield models output point estimates ($\hat{y} = 80.2\text{ t}$). Because $P(Y = 80.2) = 0$ and weather shocks are asymmetric, point estimates lead directly to contractual defaults. |
