@@ -1,256 +1,346 @@
 plot_id,season,crop,sowing_date,seed_variety,area_sown_ha
-PLT-001,2023-KH,tomato,2023-06-17,Abhinav,1.94
-PLT-002,2023-KH,paddy,2023-06-11,Indrayani,1.14
-PLT-003,2023-KH,onion,2023-06-10,Bhima Kiran,1.41
-PLT-004,2023-KH,tomato,2023-06-12,Abhinav,1.46
-PLT-005,2023-KH,paddy,2023-06-20,Indrayani,1.0
-PLT-006,2023-KH,onion,2023-06-12,Bhima Red,0.65
-PLT-007,2023-KH,tomato,2023-06-17,Abhinav,2.19
-PLT-008,2023-KH,paddy,2023-06-16,BPT 5204,1.29
-PLT-009,2023-KH,onion,2023-06-15,Bhima Red,0.67
-PLT-010,2023-KH,tomato,2023-06-18,Arka Rakshak,1.18
-PLT-011,2023-KH,paddy,2023-06-15,Basmati 370,2.32
-PLT-012,2023-KH,onion,2023-06-19,Bhima Red,1.02
-PLT-013,2023-KH,tomato,2023-06-15,Pusa Ruby,0.82
-PLT-014,2023-KH,paddy,2023-06-10,BPT 5204,2.07
-PLT-015,2023-KH,onion,2023-06-17,Bhima Kiran,0.71
-PLT-016,2023-KH,tomato,2023-06-11,Pusa Ruby,1.74
-PLT-017,2023-KH,paddy,2023-06-10,Indrayani,2.25
-PLT-018,2023-KH,onion,2023-06-13,Bhima Red,1.36
-PLT-019,2023-KH,tomato,2023-06-20,Arka Rakshak,2.07
-PLT-020,2023-KH,paddy,2023-06-15,Indrayani,0.77
-PLT-021,2023-KH,onion,2023-06-16,Bhima Red,2.22
-PLT-022,2023-KH,tomato,2023-06-13,Arka Rakshak,1.34
-PLT-023,2023-KH,paddy,2023-06-12,Indrayani,2.35
-PLT-024,2023-KH,onion,2023-06-13,Bhima Kiran,1.37
-PLT-025,2023-KH,tomato,2023-06-13,Arka Rakshak,0.73
-PLT-026,2023-KH,paddy,2023-06-13,Basmati 370,0.9
-PLT-027,2023-KH,onion,2023-06-14,AgriFound Light Red,1.7
-PLT-028,2023-KH,tomato,2023-06-15,Abhinav,1.69
-PLT-029,2023-KH,paddy,2023-06-16,BPT 5204,1.98
-PLT-030,2023-KH,onion,2023-06-19,Bhima Red,0.78
-PLT-031,2023-KH,tomato,2023-06-18,Abhinav,1.43
-PLT-032,2023-KH,paddy,2023-06-11,Indrayani,0.88
-PLT-033,2023-KH,onion,2023-06-11,AgriFound Light Red,2.19
-PLT-034,2023-KH,tomato,2023-06-18,Abhinav,1.73
-PLT-035,2023-KH,paddy,2023-06-14,Basmati 370,1.81
-PLT-036,2023-KH,onion,2023-06-10,Bhima Red,0.63
-PLT-037,2023-KH,tomato,2023-06-14,Abhinav,1.23
-PLT-038,2023-KH,paddy,2023-06-12,Basmati 370,1.97
-PLT-039,2023-KH,onion,2023-06-20,AgriFound Light Red,0.97
-PLT-040,2023-KH,tomato,2023-06-18,Arka Rakshak,0.65
-PLT-041,2023-KH,paddy,2023-06-14,Basmati 370,1.17
-PLT-042,2023-KH,onion,2023-06-19,AgriFound Light Red,1.1
-PLT-043,2023-KH,tomato,2023-06-13,Abhinav,1.66
-PLT-044,2023-KH,paddy,2023-06-20,BPT 5204,2.36
-PLT-045,2023-KH,onion,2023-06-20,AgriFound Light Red,2.39
-PLT-046,2023-KH,tomato,2023-06-18,Arka Rakshak,0.98
-PLT-047,2023-KH,paddy,2023-06-14,Indrayani,0.73
-PLT-048,2023-KH,onion,2023-06-11,Bhima Kiran,1.13
-PLT-049,2023-KH,tomato,2023-06-10,Pusa Ruby,2.27
-PLT-050,2023-KH,paddy,2023-06-16,Indrayani,2.38
-PLT-051,2023-KH,onion,2023-06-19,AgriFound Light Red,0.72
-PLT-052,2023-KH,tomato,2023-06-14,Arka Rakshak,2.02
-PLT-053,2023-KH,paddy,2023-06-10,Indrayani,2.31
-PLT-054,2023-KH,onion,2023-06-18,AgriFound Light Red,1.35
-PLT-055,2023-KH,tomato,2023-06-12,Pusa Ruby,2.44
-PLT-056,2023-KH,paddy,2023-06-17,BPT 5204,0.74
-PLT-057,2023-KH,onion,2023-06-18,Bhima Kiran,1.22
-PLT-058,2023-KH,tomato,2023-06-16,Arka Rakshak,0.72
-PLT-059,2023-KH,paddy,2023-06-19,Basmati 370,2.17
-PLT-060,2023-KH,onion,2023-06-13,AgriFound Light Red,2.0
-PLT-061,2023-KH,tomato,2023-06-20,Pusa Ruby,1.22
-PLT-062,2023-KH,paddy,2023-06-19,BPT 5204,0.77
-PLT-063,2023-KH,onion,2023-06-15,AgriFound Light Red,1.59
-PLT-064,2023-KH,tomato,2023-06-12,Pusa Ruby,1.84
-PLT-065,2023-KH,paddy,2023-06-14,Basmati 370,1.28
-PLT-066,2023-KH,onion,2023-06-18,AgriFound Light Red,2.22
-PLT-067,2023-KH,tomato,2023-06-19,Arka Rakshak,1.16
-PLT-068,2023-KH,paddy,2023-06-14,Indrayani,0.72
-PLT-069,2023-KH,onion,2023-06-19,AgriFound Light Red,0.88
-PLT-070,2023-KH,tomato,2023-06-19,Abhinav,1.74
-PLT-071,2023-KH,paddy,2023-06-12,Basmati 370,2.22
-PLT-072,2023-KH,onion,2023-06-17,Bhima Red,0.79
-PLT-073,2023-KH,tomato,2023-06-16,Pusa Ruby,1.36
-PLT-074,2023-KH,paddy,2023-06-18,BPT 5204,1.21
-PLT-075,2023-KH,onion,2023-06-18,Bhima Red,1.1
-PLT-076,2023-KH,tomato,2023-06-20,Arka Rakshak,0.84
-PLT-077,2023-KH,paddy,2023-06-18,BPT 5204,1.83
-PLT-078,2023-KH,onion,2023-06-14,AgriFound Light Red,1.59
-PLT-079,2023-KH,tomato,2023-06-12,Pusa Ruby,1.45
-PLT-080,2023-KH,paddy,2023-06-17,BPT 5204,1.28
-PLT-081,2023-KH,onion,2023-06-18,AgriFound Light Red,0.72
-PLT-082,2023-KH,tomato,2023-06-11,Arka Rakshak,0.7
-PLT-083,2023-KH,paddy,2023-06-12,Indrayani,2.44
-PLT-084,2023-KH,onion,2023-06-14,Bhima Red,2.01
-PLT-085,2023-KH,tomato,2023-06-13,Abhinav,0.81
-PLT-001,2023-RB,paddy,2023-11-12,Indrayani,1.88
-PLT-002,2023-RB,onion,2023-11-18,Bhima Red,1.18
-PLT-003,2023-RB,tomato,2023-11-16,Pusa Ruby,1.47
-PLT-004,2023-RB,paddy,2023-11-18,Basmati 370,1.41
-PLT-005,2023-RB,onion,2023-11-15,AgriFound Light Red,1.01
-PLT-006,2023-RB,tomato,2023-11-14,Arka Rakshak,0.62
-PLT-007,2023-RB,paddy,2023-11-13,Basmati 370,2.23
-PLT-008,2023-RB,onion,2023-11-18,AgriFound Light Red,1.3
-PLT-009,2023-RB,tomato,2023-11-15,Pusa Ruby,0.71
-PLT-010,2023-RB,paddy,2023-11-19,BPT 5204,1.11
-PLT-011,2023-RB,onion,2023-11-12,Bhima Red,2.27
-PLT-012,2023-RB,tomato,2023-11-12,Pusa Ruby,1.01
-PLT-013,2023-RB,paddy,2023-11-20,Basmati 370,0.83
-PLT-014,2023-RB,onion,2023-11-16,Bhima Kiran,2.05
-PLT-015,2023-RB,tomato,2023-11-10,Abhinav,0.72
-PLT-016,2023-RB,paddy,2023-11-16,BPT 5204,1.83
-PLT-017,2023-RB,onion,2023-11-19,Bhima Red,2.15
-PLT-018,2023-RB,tomato,2023-11-11,Abhinav,1.34
-PLT-019,2023-RB,paddy,2023-11-15,Indrayani,2.17
-PLT-020,2023-RB,onion,2023-11-18,Bhima Red,0.79
-PLT-021,2023-RB,tomato,2023-11-14,Abhinav,2.2
-PLT-022,2023-RB,paddy,2023-11-11,Indrayani,1.25
-PLT-023,2023-RB,onion,2023-11-17,AgriFound Light Red,2.33
-PLT-024,2023-RB,tomato,2023-11-11,Pusa Ruby,1.29
-PLT-025,2023-RB,paddy,2023-11-11,Indrayani,0.72
-PLT-026,2023-RB,onion,2023-11-14,AgriFound Light Red,0.89
-PLT-027,2023-RB,tomato,2023-11-16,Arka Rakshak,1.78
-PLT-028,2023-RB,paddy,2023-11-16,BPT 5204,1.73
-PLT-029,2023-RB,onion,2023-11-11,Bhima Kiran,1.92
-PLT-030,2023-RB,tomato,2023-11-18,Arka Rakshak,0.72
-PLT-031,2023-RB,paddy,2023-11-11,Indrayani,1.35
-PLT-032,2023-RB,onion,2023-11-11,Bhima Kiran,0.92
-PLT-033,2023-RB,tomato,2023-11-11,Arka Rakshak,2.36
-PLT-034,2023-RB,paddy,2023-11-12,BPT 5204,1.74
-PLT-035,2023-RB,onion,2023-11-19,AgriFound Light Red,1.83
-PLT-036,2023-RB,tomato,2023-11-19,Arka Rakshak,0.61
-PLT-037,2023-RB,paddy,2023-11-16,Indrayani,1.31
-PLT-038,2023-RB,onion,2023-11-20,Bhima Red,1.97
-PLT-039,2023-RB,tomato,2023-11-15,Arka Rakshak,0.94
-PLT-040,2023-RB,paddy,2023-11-11,BPT 5204,0.61
-PLT-041,2023-RB,onion,2023-11-15,Bhima Kiran,1.16
-PLT-042,2023-RB,tomato,2023-11-13,Abhinav,1.04
-PLT-043,2023-RB,paddy,2023-11-18,Indrayani,1.7
-PLT-044,2023-RB,onion,2023-11-13,AgriFound Light Red,2.38
-PLT-045,2023-RB,tomato,2023-11-17,Abhinav,2.46
-PLT-046,2023-RB,paddy,2023-11-19,Basmati 370,0.98
-PLT-047,2023-RB,onion,2023-11-15,Bhima Kiran,0.79
-PLT-048,2023-RB,tomato,2023-11-14,Arka Rakshak,1.1
-PLT-049,2023-RB,paddy,2023-11-16,Basmati 370,2.2
-PLT-050,2023-RB,onion,2023-11-12,Bhima Kiran,2.32
-PLT-051,2023-RB,tomato,2023-11-18,Pusa Ruby,0.71
-PLT-052,2023-RB,paddy,2023-11-16,BPT 5204,1.83
-PLT-053,2023-RB,onion,2023-11-17,Bhima Kiran,2.15
-PLT-054,2023-RB,tomato,2023-11-14,Pusa Ruby,1.38
-PLT-055,2023-RB,paddy,2023-11-19,Basmati 370,2.3
-PLT-056,2023-RB,onion,2023-11-12,Bhima Red,0.75
-PLT-057,2023-RB,tomato,2023-11-14,Arka Rakshak,1.26
-PLT-058,2023-RB,paddy,2023-11-15,Basmati 370,0.7
-PLT-059,2023-RB,onion,2023-11-19,Bhima Red,2.19
-PLT-060,2023-RB,tomato,2023-11-19,Pusa Ruby,1.83
-PLT-061,2023-RB,paddy,2023-11-16,BPT 5204,1.2
-PLT-062,2023-RB,onion,2023-11-11,Bhima Kiran,0.79
-PLT-063,2023-RB,tomato,2023-11-12,Abhinav,1.55
-PLT-064,2023-RB,paddy,2023-11-19,Basmati 370,1.84
-PLT-065,2023-RB,onion,2023-11-19,Bhima Kiran,1.26
-PLT-066,2023-RB,tomato,2023-11-16,Pusa Ruby,2.22
-PLT-067,2023-RB,paddy,2023-11-16,BPT 5204,1.19
-PLT-068,2023-RB,onion,2023-11-16,AgriFound Light Red,0.72
-PLT-069,2023-RB,tomato,2023-11-12,Abhinav,0.89
-PLT-070,2023-RB,paddy,2023-11-19,Indrayani,1.77
-PLT-071,2023-RB,onion,2023-11-20,Bhima Kiran,2.18
-PLT-072,2023-RB,tomato,2023-11-17,Arka Rakshak,0.74
-PLT-073,2023-RB,paddy,2023-11-12,Basmati 370,1.4
-PLT-074,2023-RB,onion,2023-11-20,Bhima Kiran,1.17
-PLT-075,2023-RB,tomato,2023-11-15,Arka Rakshak,1.03
-PLT-076,2023-RB,paddy,2023-11-19,BPT 5204,0.81
-PLT-077,2023-RB,onion,2023-11-10,AgriFound Light Red,1.92
-PLT-078,2023-RB,tomato,2023-11-19,Abhinav,1.6
-PLT-079,2023-RB,paddy,2023-11-16,BPT 5204,1.5
-PLT-080,2023-RB,onion,2023-11-16,AgriFound Light Red,1.28
-PLT-081,2023-RB,tomato,2023-11-16,Abhinav,0.7
-PLT-082,2023-RB,paddy,2023-11-20,Indrayani,0.68
-PLT-083,2023-RB,onion,2023-11-15,AgriFound Light Red,2.27
-PLT-084,2023-RB,tomato,2023-11-11,Arka Rakshak,1.88
-PLT-085,2023-RB,paddy,2023-11-10,BPT 5204,0.77
-PLT-001,2024-KH,tomato,2024-06-20,Abhinav,1.96
-PLT-002,2024-KH,paddy,2024-06-15,Indrayani,1.13
-PLT-003,2024-KH,onion,2024-06-15,AgriFound Light Red,1.38
-PLT-004,2024-KH,tomato,2024-06-19,Arka Rakshak,1.45
-PLT-005,2024-KH,paddy,2024-06-17,Basmati 370,0.95
-PLT-006,2024-KH,onion,2024-06-12,Bhima Red,0.63
-PLT-007,2024-KH,tomato,2024-06-14,Arka Rakshak,2.06
-PLT-008,2024-KH,paddy,2024-06-10,BPT 5204,1.37
-PLT-009,2024-KH,onion,2024-06-18,AgriFound Light Red,0.73
-PLT-010,2024-KH,tomato,2024-06-18,Pusa Ruby,1.13
-PLT-011,2024-KH,paddy,2024-06-10,BPT 5204,2.26
-PLT-012,2024-KH,onion,2024-06-11,Bhima Kiran,1.07
-PLT-013,2024-KH,tomato,2024-06-13,Pusa Ruby,0.8
-PLT-014,2024-KH,paddy,2024-06-12,Basmati 370,1.93
-PLT-015,2024-KH,onion,2024-06-10,Bhima Red,0.69
-PLT-016,2024-KH,tomato,2024-06-18,Pusa Ruby,1.76
-PLT-017,2024-KH,paddy,2024-06-11,Basmati 370,2.22
-PLT-018,2024-KH,onion,2024-06-20,Bhima Kiran,1.38
-PLT-019,2024-KH,tomato,2024-06-19,Pusa Ruby,2.08
-PLT-020,2024-KH,paddy,2024-06-13,Basmati 370,0.79
-PLT-021,2024-KH,onion,2024-06-20,Bhima Kiran,2.25
-PLT-022,2024-KH,tomato,2024-06-17,Arka Rakshak,1.35
-PLT-023,2024-KH,paddy,2024-06-20,Basmati 370,2.27
-PLT-024,2024-KH,onion,2024-06-16,Bhima Kiran,1.37
-PLT-025,2024-KH,tomato,2024-06-16,Abhinav,0.72
-PLT-026,2024-KH,paddy,2024-06-14,Basmati 370,0.87
-PLT-027,2024-KH,onion,2024-06-20,Bhima Kiran,1.83
-PLT-028,2024-KH,tomato,2024-06-20,Arka Rakshak,1.59
-PLT-029,2024-KH,paddy,2024-06-14,Basmati 370,2.02
-PLT-030,2024-KH,onion,2024-06-20,AgriFound Light Red,0.73
-PLT-031,2024-KH,tomato,2024-06-10,Pusa Ruby,1.35
-PLT-032,2024-KH,paddy,2024-06-15,Basmati 370,0.89
-PLT-033,2024-KH,onion,2024-06-10,Bhima Kiran,2.26
-PLT-034,2024-KH,tomato,2024-06-18,Pusa Ruby,1.68
-PLT-035,2024-KH,paddy,2024-06-19,BPT 5204,1.77
-PLT-036,2024-KH,onion,2024-06-16,AgriFound Light Red,0.63
-PLT-037,2024-KH,tomato,2024-06-17,Abhinav,1.23
-PLT-038,2024-KH,paddy,2024-06-20,BPT 5204,1.95
-PLT-039,2024-KH,onion,2024-06-20,AgriFound Light Red,0.9
-PLT-040,2024-KH,tomato,2024-06-17,Abhinav,0.65
-PLT-041,2024-KH,paddy,2024-06-18,Indrayani,1.18
-PLT-042,2024-KH,onion,2024-06-18,Bhima Red,1.08
-PLT-043,2024-KH,tomato,2024-06-13,Abhinav,1.63
-PLT-044,2024-KH,paddy,2024-06-15,Basmati 370,2.29
-PLT-045,2024-KH,onion,2024-06-15,AgriFound Light Red,2.23
-PLT-046,2024-KH,tomato,2024-06-13,Pusa Ruby,1.0
-PLT-047,2024-KH,paddy,2024-06-16,BPT 5204,0.76
-PLT-048,2024-KH,onion,2024-06-15,Bhima Kiran,1.13
-PLT-049,2024-KH,tomato,2024-06-17,Arka Rakshak,2.41
-PLT-050,2024-KH,paddy,2024-06-15,Indrayani,2.31
-PLT-051,2024-KH,onion,2024-06-20,Bhima Red,0.77
-PLT-052,2024-KH,tomato,2024-06-19,Arka Rakshak,1.96
-PLT-053,2024-KH,paddy,2024-06-13,Indrayani,2.31
-PLT-054,2024-KH,onion,2024-06-12,Bhima Red,1.44
-PLT-055,2024-KH,tomato,2024-06-19,Arka Rakshak,2.42
-PLT-056,2024-KH,paddy,2024-06-11,Basmati 370,0.74
-PLT-057,2024-KH,onion,2024-06-17,Bhima Red,1.32
-PLT-058,2024-KH,tomato,2024-06-11,Pusa Ruby,0.69
-PLT-059,2024-KH,paddy,2024-06-15,BPT 5204,2.07
-PLT-060,2024-KH,onion,2024-06-16,AgriFound Light Red,1.84
-PLT-061,2024-KH,tomato,2024-06-17,Arka Rakshak,1.22
-PLT-062,2024-KH,paddy,2024-06-17,BPT 5204,0.77
-PLT-063,2024-KH,onion,2024-06-15,Bhima Red,1.66
-PLT-064,2024-KH,tomato,2024-06-10,Abhinav,1.93
-PLT-065,2024-KH,paddy,2024-06-14,Indrayani,1.28
-PLT-066,2024-KH,onion,2024-06-13,Bhima Kiran,2.31
-PLT-067,2024-KH,tomato,2024-06-10,Arka Rakshak,1.18
-PLT-068,2024-KH,paddy,2024-06-14,Basmati 370,0.7
-PLT-069,2024-KH,onion,2024-06-18,Bhima Red,0.83
-PLT-070,2024-KH,tomato,2024-06-18,Pusa Ruby,1.63
-PLT-071,2024-KH,paddy,2024-06-18,Indrayani,2.22
-PLT-072,2024-KH,onion,2024-06-19,Bhima Red,0.77
-PLT-073,2024-KH,tomato,2024-06-15,Abhinav,1.44
-PLT-074,2024-KH,paddy,2024-06-14,Indrayani,1.2
-PLT-075,2024-KH,onion,2024-06-16,Bhima Kiran,1.08
-PLT-076,2024-KH,tomato,2024-06-11,Pusa Ruby,0.81
-PLT-077,2024-KH,paddy,2024-06-10,BPT 5204,1.98
-PLT-078,2024-KH,onion,2024-06-20,Bhima Kiran,1.61
-PLT-079,2024-KH,tomato,2024-06-12,Pusa Ruby,1.39
-PLT-080,2024-KH,paddy,2024-06-19,Basmati 370,1.29
-PLT-081,2024-KH,onion,2024-06-12,Bhima Kiran,0.69
-PLT-082,2024-KH,tomato,2024-06-17,Abhinav,0.66
-PLT-083,2024-KH,paddy,2024-06-14,BPT 5204,2.37
-PLT-084,2024-KH,onion,2024-06-20,AgriFound Light Red,1.84
-PLT-085,2024-KH,tomato,2024-06-17,Arka Rakshak,0.79
+PLT-001,2023-KH,onion,2023-06-13,AgriFound Light Red,1.01
+PLT-002,2023-KH,onion,2023-06-13,Bhima Red,0.8
+PLT-003,2023-KH,onion,2023-06-15,Bhima Kiran,2.1
+PLT-004,2023-KH,onion,2023-06-20,Bhima Red,0.72
+PLT-005,2023-KH,onion,2023-06-15,Bhima Red,1.66
+PLT-006,2023-KH,onion,2023-06-18,Bhima Red,2.23
+PLT-007,2023-KH,onion,2023-06-15,Bhima Red,1.45
+PLT-008,2023-KH,onion,2023-06-19,Bhima Red,2.1
+PLT-009,2023-KH,onion,2023-06-15,AgriFound Light Red,0.81
+PLT-010,2023-KH,onion,2023-06-10,AgriFound Light Red,2.34
+PLT-011,2023-KH,onion,2023-06-17,Bhima Kiran,1.28
+PLT-012,2023-KH,onion,2023-06-11,AgriFound Light Red,2.32
+PLT-013,2023-KH,onion,2023-06-10,Bhima Kiran,1.41
+PLT-014,2023-KH,onion,2023-06-13,Bhima Red,0.69
+PLT-015,2023-KH,onion,2023-06-20,Bhima Red,0.86
+PLT-016,2023-KH,onion,2023-06-15,Bhima Kiran,1.71
+PLT-017,2023-KH,onion,2023-06-16,Bhima Red,1.61
+PLT-018,2023-KH,onion,2023-06-13,Bhima Red,1.99
+PLT-019,2023-KH,onion,2023-06-12,Bhima Kiran,0.75
+PLT-020,2023-KH,onion,2023-06-13,Bhima Kiran,1.44
+PLT-021,2023-KH,onion,2023-06-13,Bhima Red,0.9
+PLT-022,2023-KH,onion,2023-06-13,Bhima Red,2.32
+PLT-023,2023-KH,onion,2023-06-14,AgriFound Light Red,1.65
+PLT-024,2023-KH,onion,2023-06-15,Bhima Kiran,1.82
+PLT-025,2023-KH,onion,2023-06-16,AgriFound Light Red,0.63
+PLT-026,2023-KH,onion,2023-06-19,Bhima Red,1.33
+PLT-027,2023-KH,onion,2023-06-18,Bhima Kiran,2.05
+PLT-028,2023-KH,onion,2023-06-11,Bhima Kiran,0.94
+PLT-029,2023-KH,onion,2023-06-11,AgriFound Light Red,0.61
+PLT-030,2023-KH,onion,2023-06-18,Bhima Kiran,1.17
+PLT-031,2023-KH,onion,2023-06-14,Bhima Red,1.05
+PLT-032,2023-KH,onion,2023-06-10,Bhima Red,1.73
+PLT-033,2023-KH,onion,2023-06-14,Bhima Kiran,2.24
+PLT-034,2023-KH,onion,2023-06-12,Bhima Red,2.27
+PLT-035,2023-KH,onion,2023-06-20,AgriFound Light Red,1.03
+PLT-036,2023-KH,onion,2023-06-18,Bhima Red,0.78
+PLT-037,2023-KH,onion,2023-06-14,Bhima Red,1.17
+PLT-038,2023-KH,onion,2023-06-19,AgriFound Light Red,2.41
+PLT-039,2023-KH,onion,2023-06-13,Bhima Kiran,2.24
+PLT-040,2023-KH,onion,2023-06-20,AgriFound Light Red,0.75
+PLT-041,2023-KH,onion,2023-06-20,AgriFound Light Red,1.96
+PLT-042,2023-KH,onion,2023-06-18,Bhima Red,2.2
+PLT-043,2023-KH,onion,2023-06-14,Bhima Kiran,1.31
+PLT-044,2023-KH,onion,2023-06-11,Bhima Kiran,2.28
+PLT-045,2023-KH,onion,2023-06-10,AgriFound Light Red,0.74
+PLT-046,2023-KH,onion,2023-06-16,Bhima Kiran,1.33
+PLT-047,2023-KH,onion,2023-06-19,AgriFound Light Red,0.71
+PLT-048,2023-KH,onion,2023-06-14,Bhima Red,2.26
+PLT-049,2023-KH,onion,2023-06-10,Bhima Kiran,1.98
+PLT-050,2023-KH,onion,2023-06-18,AgriFound Light Red,1.24
+PLT-051,2023-KH,onion,2023-06-12,AgriFound Light Red,0.81
+PLT-052,2023-KH,onion,2023-06-17,AgriFound Light Red,1.59
+PLT-053,2023-KH,onion,2023-06-18,Bhima Kiran,1.81
+PLT-054,2023-KH,onion,2023-06-16,Bhima Red,1.24
+PLT-055,2023-KH,onion,2023-06-19,Bhima Red,2.32
+PLT-056,2023-KH,onion,2023-06-13,AgriFound Light Red,1.19
+PLT-057,2023-KH,onion,2023-06-20,AgriFound Light Red,0.69
+PLT-058,2023-KH,onion,2023-06-19,AgriFound Light Red,0.88
+PLT-059,2023-KH,onion,2023-06-15,AgriFound Light Red,1.69
+PLT-060,2023-KH,onion,2023-06-12,AgriFound Light Red,2.14
+PLT-061,2023-KH,onion,2023-06-14,Bhima Red,0.78
+PLT-062,2023-KH,onion,2023-06-18,AgriFound Light Red,1.35
+PLT-063,2023-KH,onion,2023-06-19,Bhima Red,1.23
+PLT-064,2023-KH,onion,2023-06-14,Bhima Kiran,1.1
+PLT-065,2023-KH,onion,2023-06-19,AgriFound Light Red,0.81
+PLT-066,2023-KH,tomato,2023-06-19,Abhinav,1.93
+PLT-067,2023-KH,tomato,2023-06-12,Arka Rakshak,1.57
+PLT-068,2023-KH,tomato,2023-06-17,Arka Rakshak,1.5
+PLT-069,2023-KH,tomato,2023-06-16,Pusa Ruby,1.21
+PLT-070,2023-KH,tomato,2023-06-18,Pusa Ruby,0.68
+PLT-071,2023-KH,tomato,2023-06-18,Arka Rakshak,0.69
+PLT-072,2023-KH,tomato,2023-06-20,Arka Rakshak,2.47
+PLT-073,2023-KH,tomato,2023-06-18,Pusa Ruby,1.89
+PLT-074,2023-KH,tomato,2023-06-14,Pusa Ruby,0.82
+PLT-075,2023-KH,tomato,2023-06-12,Pusa Ruby,1.81
+PLT-076,2023-KH,tomato,2023-06-17,Pusa Ruby,1.5
+PLT-077,2023-KH,tomato,2023-06-18,Pusa Ruby,2.22
+PLT-078,2023-KH,tomato,2023-06-11,Arka Rakshak,1.35
+PLT-079,2023-KH,tomato,2023-06-12,Abhinav,1.74
+PLT-080,2023-KH,tomato,2023-06-14,Arka Rakshak,2.43
+PLT-081,2023-KH,tomato,2023-06-13,Abhinav,0.73
+PLT-082,2023-KH,tomato,2023-06-12,Abhinav,1.94
+PLT-083,2023-KH,tomato,2023-06-18,Pusa Ruby,1.91
+PLT-084,2023-KH,tomato,2023-06-16,Pusa Ruby,1.49
+PLT-085,2023-KH,tomato,2023-06-16,Arka Rakshak,1.62
+PLT-086,2023-KH,tomato,2023-06-11,Arka Rakshak,0.99
+PLT-087,2023-KH,tomato,2023-06-12,Pusa Ruby,0.79
+PLT-088,2023-KH,tomato,2023-06-13,Pusa Ruby,2.12
+PLT-089,2023-KH,tomato,2023-06-20,Pusa Ruby,1.57
+PLT-090,2023-KH,tomato,2023-06-19,Abhinav,1.03
+PLT-091,2023-KH,tomato,2023-06-11,Arka Rakshak,1.47
+PLT-092,2023-KH,tomato,2023-06-11,Pusa Ruby,1.5
+PLT-093,2023-KH,tomato,2023-06-13,Arka Rakshak,1.43
+PLT-094,2023-KH,tomato,2023-06-15,Pusa Ruby,2.28
+PLT-095,2023-KH,tomato,2023-06-15,Pusa Ruby,0.75
+PLT-096,2023-KH,tomato,2023-06-12,Pusa Ruby,1.96
+PLT-097,2023-KH,tomato,2023-06-20,Arka Rakshak,0.67
+PLT-098,2023-KH,tomato,2023-06-13,Arka Rakshak,1.54
+PLT-099,2023-KH,tomato,2023-06-15,Arka Rakshak,1.3
+PLT-100,2023-KH,tomato,2023-06-16,Pusa Ruby,0.61
+PLT-101,2023-KH,paddy,2023-06-14,Indrayani,1.53
+PLT-102,2023-KH,paddy,2023-06-11,Basmati 370,1.85
+PLT-103,2023-KH,paddy,2023-06-16,Basmati 370,1.55
+PLT-104,2023-KH,paddy,2023-06-18,Indrayani,1.53
+PLT-105,2023-KH,paddy,2023-06-15,Basmati 370,1.76
+PLT-106,2023-KH,paddy,2023-06-11,BPT 5204,1.19
+PLT-107,2023-KH,paddy,2023-06-12,Basmati 370,0.87
+PLT-108,2023-KH,paddy,2023-06-17,Indrayani,0.75
+PLT-109,2023-KH,paddy,2023-06-12,BPT 5204,0.72
+PLT-110,2023-KH,paddy,2023-06-17,Indrayani,2.36
+PLT-111,2023-KH,paddy,2023-06-20,Basmati 370,2.08
+PLT-112,2023-KH,paddy,2023-06-15,Indrayani,1.96
+PLT-113,2023-KH,paddy,2023-06-20,BPT 5204,1.06
+PLT-114,2023-KH,paddy,2023-06-20,BPT 5204,1.37
+PLT-115,2023-KH,paddy,2023-06-11,Indrayani,1.62
+PLT-001,2023-RB,onion,2023-11-18,AgriFound Light Red,1.0
+PLT-002,2023-RB,onion,2023-11-13,Bhima Red,0.81
+PLT-003,2023-RB,onion,2023-11-16,AgriFound Light Red,2.13
+PLT-004,2023-RB,onion,2023-11-19,Bhima Kiran,0.72
+PLT-005,2023-RB,onion,2023-11-20,Bhima Kiran,1.79
+PLT-006,2023-RB,onion,2023-11-19,Bhima Kiran,2.18
+PLT-007,2023-RB,onion,2023-11-10,Bhima Red,1.36
+PLT-008,2023-RB,onion,2023-11-17,Bhima Kiran,2.21
+PLT-009,2023-RB,onion,2023-11-17,AgriFound Light Red,0.8
+PLT-010,2023-RB,onion,2023-11-16,Bhima Red,2.29
+PLT-011,2023-RB,onion,2023-11-19,Bhima Kiran,1.26
+PLT-012,2023-RB,onion,2023-11-15,Bhima Kiran,2.21
+PLT-013,2023-RB,onion,2023-11-17,Bhima Kiran,1.34
+PLT-014,2023-RB,onion,2023-11-13,AgriFound Light Red,0.7
+PLT-015,2023-RB,onion,2023-11-12,AgriFound Light Red,0.85
+PLT-016,2023-RB,onion,2023-11-11,Bhima Kiran,1.67
+PLT-017,2023-RB,onion,2023-11-18,Bhima Red,1.68
+PLT-018,2023-RB,onion,2023-11-20,Bhima Kiran,2.02
+PLT-019,2023-RB,onion,2023-11-16,AgriFound Light Red,0.76
+PLT-020,2023-RB,onion,2023-11-20,AgriFound Light Red,1.36
+PLT-021,2023-RB,onion,2023-11-18,Bhima Kiran,0.89
+PLT-022,2023-RB,onion,2023-11-10,Bhima Kiran,2.24
+PLT-023,2023-RB,onion,2023-11-11,AgriFound Light Red,1.77
+PLT-024,2023-RB,onion,2023-11-14,Bhima Red,1.79
+PLT-025,2023-RB,onion,2023-11-13,Bhima Kiran,0.63
+PLT-026,2023-RB,onion,2023-11-13,Bhima Red,1.26
+PLT-027,2023-RB,onion,2023-11-11,Bhima Red,2.02
+PLT-028,2023-RB,onion,2023-11-11,AgriFound Light Red,0.91
+PLT-029,2023-RB,onion,2023-11-15,AgriFound Light Red,0.63
+PLT-030,2023-RB,onion,2023-11-10,Bhima Red,1.21
+PLT-031,2023-RB,onion,2023-11-14,AgriFound Light Red,1.1
+PLT-032,2023-RB,onion,2023-11-13,Bhima Kiran,1.7
+PLT-033,2023-RB,onion,2023-11-13,Bhima Red,2.34
+PLT-034,2023-RB,onion,2023-11-15,Bhima Kiran,2.35
+PLT-035,2023-RB,onion,2023-11-19,Bhima Red,1.0
+PLT-036,2023-RB,onion,2023-11-14,AgriFound Light Red,0.78
+PLT-037,2023-RB,onion,2023-11-12,Bhima Red,1.1
+PLT-038,2023-RB,onion,2023-11-16,AgriFound Light Red,2.2
+PLT-039,2023-RB,onion,2023-11-12,Bhima Red,2.37
+PLT-040,2023-RB,onion,2023-11-13,Bhima Red,0.75
+PLT-041,2023-RB,onion,2023-11-17,Bhima Red,1.87
+PLT-042,2023-RB,onion,2023-11-11,Bhima Kiran,2.36
+PLT-043,2023-RB,onion,2023-11-20,Bhima Red,1.34
+PLT-044,2023-RB,onion,2023-11-14,Bhima Kiran,2.43
+PLT-045,2023-RB,onion,2023-11-10,Bhima Red,0.73
+PLT-046,2023-RB,onion,2023-11-16,AgriFound Light Red,1.24
+PLT-047,2023-RB,onion,2023-11-11,AgriFound Light Red,0.7
+PLT-048,2023-RB,onion,2023-11-11,AgriFound Light Red,2.05
+PLT-049,2023-RB,onion,2023-11-14,Bhima Kiran,1.87
+PLT-050,2023-RB,onion,2023-11-19,AgriFound Light Red,1.21
+PLT-051,2023-RB,onion,2023-11-18,AgriFound Light Red,0.8
+PLT-052,2023-RB,onion,2023-11-10,Bhima Red,1.56
+PLT-053,2023-RB,onion,2023-11-19,Bhima Red,1.98
+PLT-054,2023-RB,onion,2023-11-14,Bhima Red,1.24
+PLT-055,2023-RB,onion,2023-11-11,Bhima Kiran,2.38
+PLT-056,2023-RB,onion,2023-11-19,AgriFound Light Red,1.2
+PLT-057,2023-RB,onion,2023-11-12,AgriFound Light Red,0.67
+PLT-058,2023-RB,onion,2023-11-15,AgriFound Light Red,0.84
+PLT-059,2023-RB,onion,2023-11-20,Bhima Red,1.65
+PLT-060,2023-RB,onion,2023-11-20,Bhima Red,2.26
+PLT-061,2023-RB,onion,2023-11-13,Bhima Red,0.78
+PLT-062,2023-RB,onion,2023-11-13,Bhima Red,1.45
+PLT-063,2023-RB,onion,2023-11-11,Bhima Kiran,1.18
+PLT-064,2023-RB,onion,2023-11-10,Bhima Kiran,1.02
+PLT-065,2023-RB,onion,2023-11-11,AgriFound Light Red,0.79
+PLT-066,2023-RB,tomato,2023-11-17,Abhinav,1.81
+PLT-067,2023-RB,tomato,2023-11-14,Abhinav,1.61
+PLT-068,2023-RB,tomato,2023-11-17,Abhinav,1.42
+PLT-069,2023-RB,tomato,2023-11-15,Pusa Ruby,1.2
+PLT-070,2023-RB,tomato,2023-11-11,Pusa Ruby,0.69
+PLT-071,2023-RB,tomato,2023-11-14,Pusa Ruby,0.64
+PLT-072,2023-RB,tomato,2023-11-14,Arka Rakshak,2.36
+PLT-073,2023-RB,tomato,2023-11-14,Arka Rakshak,1.96
+PLT-074,2023-RB,tomato,2023-11-20,Pusa Ruby,0.77
+PLT-075,2023-RB,tomato,2023-11-15,Pusa Ruby,1.82
+PLT-076,2023-RB,tomato,2023-11-13,Abhinav,1.43
+PLT-077,2023-RB,tomato,2023-11-14,Arka Rakshak,2.09
+PLT-078,2023-RB,tomato,2023-11-13,Arka Rakshak,1.31
+PLT-079,2023-RB,tomato,2023-11-20,Arka Rakshak,1.65
+PLT-080,2023-RB,tomato,2023-11-16,Arka Rakshak,2.28
+PLT-081,2023-RB,tomato,2023-11-10,Abhinav,0.7
+PLT-082,2023-RB,tomato,2023-11-15,Arka Rakshak,2.0
+PLT-083,2023-RB,tomato,2023-11-15,Arka Rakshak,1.92
+PLT-084,2023-RB,tomato,2023-11-14,Abhinav,1.48
+PLT-085,2023-RB,tomato,2023-11-11,Pusa Ruby,1.67
+PLT-086,2023-RB,tomato,2023-11-20,Pusa Ruby,0.97
+PLT-087,2023-RB,tomato,2023-11-20,Abhinav,0.84
+PLT-088,2023-RB,tomato,2023-11-12,Pusa Ruby,2.14
+PLT-089,2023-RB,tomato,2023-11-16,Arka Rakshak,1.59
+PLT-090,2023-RB,tomato,2023-11-18,Abhinav,1.09
+PLT-091,2023-RB,tomato,2023-11-11,Pusa Ruby,1.59
+PLT-092,2023-RB,tomato,2023-11-18,Abhinav,1.46
+PLT-093,2023-RB,tomato,2023-11-17,Pusa Ruby,1.5
+PLT-094,2023-RB,tomato,2023-11-14,Arka Rakshak,2.23
+PLT-095,2023-RB,tomato,2023-11-16,Arka Rakshak,0.69
+PLT-096,2023-RB,tomato,2023-11-15,Pusa Ruby,1.84
+PLT-097,2023-RB,tomato,2023-11-14,Arka Rakshak,0.65
+PLT-098,2023-RB,tomato,2023-11-19,Arka Rakshak,1.47
+PLT-099,2023-RB,tomato,2023-11-15,Abhinav,1.24
+PLT-100,2023-RB,tomato,2023-11-11,Abhinav,0.61
+PLT-101,2023-RB,paddy,2023-11-18,Basmati 370,1.58
+PLT-102,2023-RB,paddy,2023-11-16,Basmati 370,1.7
+PLT-103,2023-RB,paddy,2023-11-10,Basmati 370,1.59
+PLT-104,2023-RB,paddy,2023-11-13,BPT 5204,1.62
+PLT-105,2023-RB,paddy,2023-11-12,Basmati 370,1.73
+PLT-106,2023-RB,paddy,2023-11-16,Basmati 370,1.15
+PLT-107,2023-RB,paddy,2023-11-13,Indrayani,0.82
+PLT-108,2023-RB,paddy,2023-11-14,Indrayani,0.7
+PLT-109,2023-RB,paddy,2023-11-11,Basmati 370,0.7
+PLT-110,2023-RB,paddy,2023-11-11,BPT 5204,2.37
+PLT-111,2023-RB,paddy,2023-11-20,Basmati 370,2.06
+PLT-112,2023-RB,paddy,2023-11-13,Indrayani,1.98
+PLT-113,2023-RB,paddy,2023-11-13,Basmati 370,1.07
+PLT-114,2023-RB,paddy,2023-11-15,Indrayani,1.39
+PLT-115,2023-RB,paddy,2023-11-15,Basmati 370,1.73
+PLT-001,2024-KH,onion,2024-06-13,AgriFound Light Red,0.99
+PLT-002,2024-KH,onion,2024-06-11,AgriFound Light Red,0.78
+PLT-003,2024-KH,onion,2024-06-15,AgriFound Light Red,2.02
+PLT-004,2024-KH,onion,2024-06-20,Bhima Kiran,0.69
+PLT-005,2024-KH,onion,2024-06-11,Bhima Red,1.69
+PLT-006,2024-KH,onion,2024-06-16,Bhima Red,2.06
+PLT-007,2024-KH,onion,2024-06-16,Bhima Kiran,1.37
+PLT-008,2024-KH,onion,2024-06-11,Bhima Kiran,2.13
+PLT-009,2024-KH,onion,2024-06-17,Bhima Kiran,0.82
+PLT-010,2024-KH,onion,2024-06-18,AgriFound Light Red,2.22
+PLT-011,2024-KH,onion,2024-06-17,AgriFound Light Red,1.35
+PLT-012,2024-KH,onion,2024-06-14,Bhima Kiran,2.4
+PLT-013,2024-KH,onion,2024-06-15,Bhima Kiran,1.33
+PLT-014,2024-KH,onion,2024-06-12,AgriFound Light Red,0.71
+PLT-015,2024-KH,onion,2024-06-19,Bhima Kiran,0.87
+PLT-016,2024-KH,onion,2024-06-20,Bhima Red,1.73
+PLT-017,2024-KH,onion,2024-06-16,Bhima Kiran,1.62
+PLT-018,2024-KH,onion,2024-06-19,AgriFound Light Red,2.03
+PLT-019,2024-KH,onion,2024-06-13,Bhima Red,0.74
+PLT-020,2024-KH,onion,2024-06-16,Bhima Red,1.46
+PLT-021,2024-KH,onion,2024-06-16,Bhima Kiran,0.91
+PLT-022,2024-KH,onion,2024-06-13,Bhima Kiran,2.16
+PLT-023,2024-KH,onion,2024-06-20,Bhima Kiran,1.75
+PLT-024,2024-KH,onion,2024-06-19,AgriFound Light Red,1.73
+PLT-025,2024-KH,onion,2024-06-18,Bhima Kiran,0.62
+PLT-026,2024-KH,onion,2024-06-16,AgriFound Light Red,1.3
+PLT-027,2024-KH,onion,2024-06-17,Bhima Kiran,2.11
+PLT-028,2024-KH,onion,2024-06-12,Bhima Red,0.97
+PLT-029,2024-KH,onion,2024-06-17,Bhima Kiran,0.66
+PLT-030,2024-KH,onion,2024-06-15,AgriFound Light Red,1.2
+PLT-031,2024-KH,onion,2024-06-17,AgriFound Light Red,1.06
+PLT-032,2024-KH,onion,2024-06-17,Bhima Red,1.74
+PLT-033,2024-KH,onion,2024-06-13,Bhima Kiran,2.24
+PLT-034,2024-KH,onion,2024-06-14,AgriFound Light Red,2.33
+PLT-035,2024-KH,onion,2024-06-17,Bhima Red,0.99
+PLT-036,2024-KH,onion,2024-06-14,Bhima Red,0.73
+PLT-037,2024-KH,onion,2024-06-19,Bhima Kiran,1.2
+PLT-038,2024-KH,onion,2024-06-15,AgriFound Light Red,2.39
+PLT-039,2024-KH,onion,2024-06-17,Bhima Red,2.25
+PLT-040,2024-KH,onion,2024-06-12,Bhima Red,0.75
+PLT-041,2024-KH,onion,2024-06-10,Bhima Kiran,1.89
+PLT-042,2024-KH,onion,2024-06-15,Bhima Red,2.14
+PLT-043,2024-KH,onion,2024-06-15,Bhima Red,1.34
+PLT-044,2024-KH,onion,2024-06-15,Bhima Kiran,2.3
+PLT-045,2024-KH,onion,2024-06-15,AgriFound Light Red,0.73
+PLT-046,2024-KH,onion,2024-06-16,AgriFound Light Red,1.29
+PLT-047,2024-KH,onion,2024-06-18,Bhima Red,0.72
+PLT-048,2024-KH,onion,2024-06-17,AgriFound Light Red,2.21
+PLT-049,2024-KH,onion,2024-06-17,AgriFound Light Red,1.93
+PLT-050,2024-KH,onion,2024-06-18,Bhima Kiran,1.28
+PLT-051,2024-KH,onion,2024-06-14,Bhima Red,0.74
+PLT-052,2024-KH,onion,2024-06-15,AgriFound Light Red,1.63
+PLT-053,2024-KH,onion,2024-06-11,AgriFound Light Red,1.99
+PLT-054,2024-KH,onion,2024-06-11,Bhima Red,1.26
+PLT-055,2024-KH,onion,2024-06-20,Bhima Kiran,2.42
+PLT-056,2024-KH,onion,2024-06-18,Bhima Kiran,1.19
+PLT-057,2024-KH,onion,2024-06-10,Bhima Kiran,0.73
+PLT-058,2024-KH,onion,2024-06-14,Bhima Kiran,0.91
+PLT-059,2024-KH,onion,2024-06-10,Bhima Red,1.7
+PLT-060,2024-KH,onion,2024-06-13,Bhima Kiran,2.28
+PLT-061,2024-KH,onion,2024-06-19,AgriFound Light Red,0.74
+PLT-062,2024-KH,onion,2024-06-17,Bhima Red,1.47
+PLT-063,2024-KH,onion,2024-06-16,AgriFound Light Red,1.18
+PLT-064,2024-KH,onion,2024-06-20,Bhima Red,1.12
+PLT-065,2024-KH,onion,2024-06-15,Bhima Kiran,0.83
+PLT-066,2024-KH,tomato,2024-06-11,Pusa Ruby,1.78
+PLT-067,2024-KH,tomato,2024-06-13,Abhinav,1.6
+PLT-068,2024-KH,tomato,2024-06-18,Abhinav,1.4
+PLT-069,2024-KH,tomato,2024-06-10,Pusa Ruby,1.2
+PLT-070,2024-KH,tomato,2024-06-11,Abhinav,0.67
+PLT-071,2024-KH,tomato,2024-06-14,Pusa Ruby,0.7
+PLT-072,2024-KH,tomato,2024-06-14,Abhinav,2.47
+PLT-073,2024-KH,tomato,2024-06-17,Arka Rakshak,1.92
+PLT-074,2024-KH,tomato,2024-06-11,Abhinav,0.84
+PLT-075,2024-KH,tomato,2024-06-14,Arka Rakshak,1.74
+PLT-076,2024-KH,tomato,2024-06-16,Abhinav,1.54
+PLT-077,2024-KH,tomato,2024-06-10,Abhinav,2.0
+PLT-078,2024-KH,tomato,2024-06-16,Pusa Ruby,1.35
+PLT-079,2024-KH,tomato,2024-06-17,Abhinav,1.63
+PLT-080,2024-KH,tomato,2024-06-14,Arka Rakshak,2.24
+PLT-081,2024-KH,tomato,2024-06-12,Arka Rakshak,0.76
+PLT-082,2024-KH,tomato,2024-06-14,Pusa Ruby,1.97
+PLT-083,2024-KH,tomato,2024-06-15,Pusa Ruby,1.75
+PLT-084,2024-KH,tomato,2024-06-12,Abhinav,1.48
+PLT-085,2024-KH,tomato,2024-06-18,Abhinav,1.66
+PLT-086,2024-KH,tomato,2024-06-15,Pusa Ruby,0.99
+PLT-087,2024-KH,tomato,2024-06-15,Arka Rakshak,0.78
+PLT-088,2024-KH,tomato,2024-06-12,Arka Rakshak,2.19
+PLT-089,2024-KH,tomato,2024-06-18,Pusa Ruby,1.68
+PLT-090,2024-KH,tomato,2024-06-19,Abhinav,1.04
+PLT-091,2024-KH,tomato,2024-06-12,Arka Rakshak,1.48
+PLT-092,2024-KH,tomato,2024-06-11,Pusa Ruby,1.53
+PLT-093,2024-KH,tomato,2024-06-10,Pusa Ruby,1.4
+PLT-094,2024-KH,tomato,2024-06-15,Arka Rakshak,2.18
+PLT-095,2024-KH,tomato,2024-06-17,Arka Rakshak,0.69
+PLT-096,2024-KH,tomato,2024-06-16,Pusa Ruby,1.96
+PLT-097,2024-KH,tomato,2024-06-17,Pusa Ruby,0.63
+PLT-098,2024-KH,tomato,2024-06-17,Abhinav,1.56
+PLT-099,2024-KH,tomato,2024-06-13,Pusa Ruby,1.26
+PLT-100,2024-KH,tomato,2024-06-10,Pusa Ruby,0.59
+PLT-101,2024-KH,paddy,2024-06-12,BPT 5204,1.54
+PLT-102,2024-KH,paddy,2024-06-17,Basmati 370,1.88
+PLT-103,2024-KH,paddy,2024-06-12,BPT 5204,1.49
+PLT-104,2024-KH,paddy,2024-06-13,BPT 5204,1.51
+PLT-105,2024-KH,paddy,2024-06-10,Indrayani,1.68
+PLT-106,2024-KH,paddy,2024-06-18,Basmati 370,1.2
+PLT-107,2024-KH,paddy,2024-06-15,BPT 5204,0.88
+PLT-108,2024-KH,paddy,2024-06-13,BPT 5204,0.73
+PLT-109,2024-KH,paddy,2024-06-12,Basmati 370,0.73
+PLT-110,2024-KH,paddy,2024-06-19,BPT 5204,2.31
+PLT-111,2024-KH,paddy,2024-06-19,Indrayani,2.07
+PLT-112,2024-KH,paddy,2024-06-10,BPT 5204,2.1
+PLT-113,2024-KH,paddy,2024-06-11,Basmati 370,1.12
+PLT-114,2024-KH,paddy,2024-06-15,Indrayani,1.32
+PLT-115,2024-KH,paddy,2024-06-18,Indrayani,1.62

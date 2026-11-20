@@ -51,8 +51,8 @@ LAST_NAMES = ["Patil", "Deshmukh", "Jadhav", "Shinde", "Pawar", "Kadam", "Gaikwa
 def generate_dataset(seed: int = 42) -> Dict[str, pd.DataFrame]:
     rng = np.random.RandomState(seed)
 
-    # 1. Farmers (50 farmers)
-    num_farmers = 50
+    # 1. Farmers (60 farmers, within 40-80)
+    num_farmers = 60
     farmers_data = []
     for i in range(1, num_farmers + 1):
         f_id = f"FAR-{i:03d}"
@@ -70,12 +70,13 @@ def generate_dataset(seed: int = 42) -> Dict[str, pd.DataFrame]:
         })
     df_farmers = pd.DataFrame(farmers_data)
 
-    # 2. Plots (75 plots across 50 farmers, 1-3 plots each)
+    # 2. Plots (125 plots across 60 farmers, 1-3 plots each)
+    # Designed so onion has ~65 plots (>= 60 train rows), tomato ~35, paddy ~25 (< 30 calib rows)
     plots_data = []
     plot_idx = 1
     for i in range(1, num_farmers + 1):
         f_id = f"FAR-{i:03d}"
-        plots_for_farmer = 1 if i > 25 else (2 if i > 10 else 3)
+        plots_for_farmer = 1 if i > 40 else (2 if i > 15 else 3)
         for _ in range(plots_for_farmer):
             p_id = f"PLT-{plot_idx:03d}"
             area = round(float(rng.uniform(0.6, 2.5)), 2)
@@ -109,11 +110,16 @@ def generate_dataset(seed: int = 42) -> Dict[str, pd.DataFrame]:
             p_soil = plot["soil_type"]
             p_irr = plot["irrigation_type"]
 
-            # Crop allocation: plot hash/deterministic choice with variety
             p_num = int(p_id.split("-")[1])
-            crop = CROPS[(p_num + (1 if season_name == "2023-RB" else 0)) % 3]
-            variety = rng.choice(VARIETIES[crop])
+            # Allocation: 1..65 onion, 66..100 tomato, 101..125 paddy
+            if p_num <= 65:
+                crop = "onion"
+            elif p_num <= 100:
+                crop = "tomato"
+            else:
+                crop = "paddy"
 
+            variety = rng.choice(VARIETIES[crop])
             sow_offset = rng.randint(-5, 6)
             sow_date = s_info["sow_start"] + timedelta(days=sow_offset)
             area_sown = round(p_area * rng.uniform(0.9, 1.0), 2)
@@ -162,12 +168,10 @@ def generate_dataset(seed: int = 42) -> Dict[str, pd.DataFrame]:
             })
 
             # Daily signals: sample 8 checkpoints per season per plot
-            # Correlated with yield & weather
             season_days = (harv_date - sow_date).days
             for step in range(8):
                 cur_date = sow_date + timedelta(days=int(step * season_days / 7))
                 frac = step / 7.0
-                # Normal NDVI curve: rises to peak at mid-season, declines
                 peak_factor = np.sin(frac * np.pi)
                 base_ndvi = 0.30 + 0.45 * peak_factor * (season_factor * irr_factor)
                 ndvi = round(float(np.clip(base_ndvi + rng.normal(0, 0.03), 0.15, 0.90)), 2)
