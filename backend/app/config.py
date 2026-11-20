@@ -1,8 +1,10 @@
 """Setu configuration constants and tunables."""
-from pydantic_settings import BaseSettings
 from typing import List
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_prefix="SETU_")
+
     NOMINAL_CONFIDENCE_LEVELS: List[float] = [0.80, 0.90]
     PRIMARY_CONFIDENCE_LEVEL: float = 0.80
     SECONDARY_CONFIDENCE_LEVEL: float = 0.90
@@ -11,8 +13,5 @@ class Settings(BaseSettings):
     MIN_TRAIN_ROWS: int = 60
     LOW_INFORMATION_RATIO: float = 1.5
     DATABASE_URL: str = "sqlite:///./setu.db"
-
-    class Config:
-        env_prefix = "SETU_"
 
 settings = Settings()
