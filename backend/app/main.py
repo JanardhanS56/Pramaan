@@ -3,6 +3,9 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from backend.app.api.ingest import router as ingest_router
 from backend.app.api.backtest import router as backtest_router
+from backend.app.api.suggestions import router as suggestions_router
+from backend.app.api.audit import router as audit_router
+from backend.app.api.pipeline import router as pipeline_router
 from backend.app.db import init_db
 
 @asynccontextmanager
@@ -23,3 +26,6 @@ def health_check():
 
 app.include_router(ingest_router)
 app.include_router(backtest_router)
+app.include_router(suggestions_router)
+app.include_router(audit_router)
+app.include_router(pipeline_router)
