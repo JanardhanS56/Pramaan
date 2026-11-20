@@ -172,7 +172,7 @@ export default function DashboardPage() {
                     <td className="py-3.5 px-5">
                       <span className="capitalize font-medium text-[#1C201E]">{s.crop}</span>
                       <span className="ml-1.5 text-[11px] font-mono tabular-nums text-[#5A635E] px-1 py-0.5 rounded bg-[#F0F2F0] border border-[#DCE1DD]">
-                        Grade {s.grade || "A"}
+                        {s.grade ? (s.grade.toLowerCase().startsWith("grade") ? s.grade : `Grade ${s.grade}`) : "Grade A"}
                       </span>
                     </td>
                     <td className="py-3.5 px-5 font-mono tabular-nums font-semibold text-[#1C201E]">

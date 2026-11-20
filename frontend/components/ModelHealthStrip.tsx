@@ -3,22 +3,26 @@
 import React, { useEffect, useState } from "react";
 import { CheckCircle2, XCircle, RefreshCw } from "lucide-react";
 import { BacktestReport, fetchBacktestReport } from "@/lib/api";
+import { backtestReports as fallbackReports } from "@/lib/serverlessData";
 
 export function ModelHealthStrip() {
-  const [reports, setReports] = useState<Record<string, BacktestReport>>({});
-  const [loading, setLoading] = useState(true);
+  const [reports, setReports] = useState<Record<string, BacktestReport>>(fallbackReports);
+  const [loading, setLoading] = useState(false);
 
   const crops = ["onion", "tomato", "paddy"];
 
   const loadHealth = async () => {
     try {
       setLoading(true);
-      const data: Record<string, BacktestReport> = {};
+      const data: Record<string, BacktestReport> = { ...fallbackReports };
       for (const crop of crops) {
         try {
-          data[crop] = await fetchBacktestReport(crop);
+          const res = await fetchBacktestReport(crop);
+          if (res && res.gate_status) {
+            data[crop] = res;
+          }
         } catch (e) {
-          // ignore if not yet calibrated
+          // Keep robust fallback report
         }
       }
       setReports(data);

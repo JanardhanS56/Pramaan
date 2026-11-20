@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
+import { Chatbot } from "@/components/Chatbot";
 
 export const metadata: Metadata = {
   title: "Setu — Commitment Confidence Engine",
@@ -24,6 +25,7 @@ export default function RootLayout({
             Setu v1.0 &quot;Pramaan&quot; · Backtest-Gated Conformal Quantiles · Sahyadri FPO
           </footer>
         </div>
+        <Chatbot />
       </body>
     </html>
   );
