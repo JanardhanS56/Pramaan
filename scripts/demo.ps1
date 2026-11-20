@@ -1,4 +1,4 @@
-# ==============================================================================
+﻿# ==============================================================================
 # Setu v1.0 Pramaan — End-to-End Demo Script for Windows PowerShell
 # ==============================================================================
 $ErrorActionPreference = 'Stop'
@@ -50,5 +50,5 @@ Write-Host '                  Click CTR-2025-07 (Onion 100t) -> AMBER Readiness 
 Write-Host '======================================================================' -ForegroundColor Green
 Write-Host ''
 Write-Host 'To launch servers, run in two separate terminals:' -ForegroundColor Cyan
-Write-Host '  Terminal 1: uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload' -ForegroundColor White
+Write-Host '  Terminal 1: python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload' -ForegroundColor White
 Write-Host '  Terminal 2: cd frontend; npm run dev' -ForegroundColor White

@@ -114,8 +114,12 @@ In under 5 minutes, this script will:
 ## Running Verification Tests
 
 ```bash
-# Run backend test suite (43 unit & API integration tests)
-python -m pytest backend/tests/ -v
+# Start backend server
+python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload
+
+# In a second terminal, start frontend
+cd frontend
+npm run dev
 
 # Run the 200-seed conformal coverage test (AC4)
 python -m pytest backend/tests/test_conformal.py -k "test_conformal_coverage" -v
