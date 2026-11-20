@@ -140,11 +140,11 @@ def generate_dataset(seed: int = 42) -> Dict[str, pd.DataFrame]:
 
             # Grade distribution
             if is_drought:
-                g_a = round(float(rng.uniform(35.0, 50.0)), 1)
-                g_b = round(float(rng.uniform(30.0, 40.0)), 1)
+                g_a = round(float(rng.uniform(35.0, 48.0)), 1)
+                g_b = round(float(rng.uniform(30.0, 38.0)), 1)
             else:
-                g_a = round(float(rng.uniform(55.0, 70.0)), 1)
-                g_b = round(float(rng.uniform(20.0, 32.0)), 1)
+                g_a = round(float(rng.uniform(50.0, 65.0)), 1)
+                g_b = round(float(rng.uniform(20.0, 28.0)), 1)
             g_c = round(100.0 - g_a - g_b, 1)
 
             harv_offset = rng.randint(-5, 6)
