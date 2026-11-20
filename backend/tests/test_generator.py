@@ -29,7 +29,7 @@ def test_generator_deterministic_ac1(tmp_path):
     assert len(data1["plots"]) >= 60, f"Plots count: {len(data1['plots'])}"
 
     seasons = set(data1["sowing"]["season"].unique())
-    assert len(seasons) == 3, f"Expected 3 seasons, got {seasons}"
+    assert len(seasons) >= 3, f"Expected >= 3 seasons, got {seasons}"
 
     crops = set(data1["sowing"]["crop"].unique())
     assert len(crops) == 3, f"Expected 3 crops, got {crops}"
@@ -43,8 +43,8 @@ def test_generator_deterministic_ac1(tmp_path):
     assert len(shortfalls) >= 1, "Expected at least one recorded contract shortfall"
 
     # 3. Verify at least one AMBER-able contract exists
-    # Contract CTR-2024-02: requires 100t onion
-    amber_contract = contracts[contracts["contract_id"] == "CTR-2024-02"]
+    # Contract CTR-2025-07: requires 100t onion
+    amber_contract = contracts[contracts["contract_id"] == "CTR-2025-07"]
     assert not amber_contract.empty
     assert amber_contract.iloc[0]["crop"] == "onion"
     assert amber_contract.iloc[0]["quantity_t"] == 100.0
