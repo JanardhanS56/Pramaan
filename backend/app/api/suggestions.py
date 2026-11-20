@@ -138,22 +138,31 @@ def generate_suggestions(
     Enforces backtest gate: returns HTTP 409 if gate is closed for crop.
     Rows are immutable: re-running creates new suggestion IDs.
     """
-    alpha = round(1.0 - confidence, 2)
+    confidence_val = float(confidence) if not hasattr(confidence, "default") else 0.80
+    alpha = round(1.0 - confidence_val, 2)
 
     # 1. Fetch contracts to evaluate
     query = select(Contract)
-    if crop:
-        query = query.where(Contract.crop == crop)
+    if isinstance(crop, str) and crop.strip():
+        query = query.where(Contract.crop == crop.strip().lower())
     contracts = session.exec(query).all()
 
     if not contracts:
         return []
 
     # 2. Check backtest gates for all crops involved
-    distinct_crops = {c.crop for c in contracts}
-    for c_crop in distinct_crops:
-        # Enforces hard rule: HTTP 409 if gate is closed
-        assert_backtest_gate_open(c_crop, session)
+    if isinstance(crop, str) and crop.strip():
+        assert_backtest_gate_open(crop.strip().lower(), session)
+    else:
+        # Filter contracts to only crops whose backtest gate is OPEN
+        open_crops = set()
+        for c_crop in {c.crop for c in contracts}:
+            try:
+                assert_backtest_gate_open(c_crop, session)
+                open_crops.add(c_crop)
+            except HTTPException:
+                pass
+        contracts = [c for c in contracts if c.crop in open_crops]
 
     generated_suggestions: List[SuggestionResponse] = []
 
