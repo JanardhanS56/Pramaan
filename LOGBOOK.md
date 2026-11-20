@@ -3,13 +3,13 @@
 <!-- AGENT: Read only CURRENT STATE + last 3 HISTORY entries on chat start. -->
 
 ## CURRENT STATE
-_Last updated: 2026-11-20T10:56:00Z · HEAD: 5e8f981_
-- **Phase:** Phase 3 — Conformal calibration & backtest (complete)
-- **Completed phases:** Phase 0, Phase 1, Phase 2, Phase 3
-- **Next task:** Phase 4 — Decision engine & explanations (`backend/app/core/decision.py`, `backend/app/core/explain.py`)
-- **Tests:** 22 passing / 0 failing · core coverage: 100%
+_Last updated: 2026-11-20T12:52:00Z · HEAD: 9f587fc_
+- **Phase:** Phase 4 — Decision engine & explanations (complete)
+- **Completed phases:** Phase 0, Phase 1, Phase 2, Phase 3, Phase 4
+- **Next task:** Phase 5 — API & audit (`backend/app/api/suggestions.py`, `backend/app/api/audit.py`, `backend/app/core/audit.py`)
+- **Tests:** 31 passing / 0 failing · core coverage: 100%
 - **Backtest gate:** onion: OPEN (empirical coverage 0.85 @ 0.80 nominal [PASS])
-- **Files hot right now:** backend/app/core/conformal.py, backend/app/core/backtest.py, scripts/backtest.py, backend/app/api/backtest.py
+- **Files hot right now:** backend/app/core/decision.py, backend/app/core/explain.py, backend/app/config.py, backend/tests/test_decision.py, backend/tests/test_explain.py
 - **Known issues / blockers:** none
 - **Open questions for the user:** none
 
@@ -60,3 +60,17 @@ _Last updated: 2026-11-20T10:56:00Z · HEAD: 5e8f981_
 - **Decisions:** Aligned 5 seasons to 60/20/20 split so held-out backtest season is 2024-RB with calibration on 2023-RB, matching expected_output.md §2.2 canonical test layout.
 - **Deferred:** none
 - **Next:** Phase 4 — Decision engine & explanations (rule gate, shortfall risk, plain-language drivers)
+
+### 2026-11-20T12:52:00Z · Phase 4 · Decision engine & explanations complete
+- **Did:**
+  - Implemented rule-gated decision engine in `backend/app/core/decision.py` evaluating `[L, U]` against contract quantity `Q` and shortfall risk `P_short` (`GREEN`, `AMBER`, `RED`).
+  - Implemented `low_information` downgrade converting `GREEN` to `AMBER` with warning when intervals are wide due to thin data.
+  - Implemented multi-contract ranking by downside exposure (`P_short * penalty_per_t` ascending).
+  - Built explanation layer in `backend/app/core/explain.py` with cached permutation feature importance and deterministic FPO-level flags (NDVI below seasonal mean, outside selling, grade tolerance).
+  - Verified AC6 (all scenarios and edge cases) in `backend/tests/test_decision.py`.
+  - Verified AC7 (2-3 drivers with `label` and `direction`, anti-hallucination guard against false tonne precision) in `backend/tests/test_explain.py`.
+- **Files:** `backend/app/config.py`, `backend/app/core/decision.py`, `backend/app/core/explain.py`, `backend/tests/test_decision.py`, `backend/tests/test_explain.py`
+- **Commits:** `7cf2b44`, `a72ade4`, `9f587fc`
+- **Decisions:** Centralized `AMBER_MIN_LOWER_RATIO` (0.70) and `AMBER_MIN_UPPER_RATIO` (0.75) in `config.py`; required `L < U` for non-degenerate range AMBER classification so degenerate point predictions fall back to RED on shortfall.
+- **Deferred:** none
+- **Next:** Phase 5 — API & audit (FastAPI endpoints, suggestion generation, human gate reason enforcement, SHA-256 input hash, append-only audit trail)
